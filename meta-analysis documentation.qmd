@@ -15,3 +15,63 @@ theme:
   light: flatly
   dark: darkly
 ---
+
+# Introduction
+
+This page is designed to provide detail on the meta-analysis undertaken for the review "Air pollution (PM2.5 and NO2) exposure and child IQ: a systematic review and meta-analysis of prospective and longitudinal evidence"
+
+# Meta-analysis Model Assumptions
+
+## Fixed-effects model
+
+Assumes that all effect sizes stem from a single, homogeneous population, i.e. all studies share the same true effect size. Thus any deviation from the overall effect size by any given study is because of sampling error. Hence why the effect is fixed. Can also be referred to as "equal effects" or "common effect".
+
+Studeis with a small standard error, numerical representation of sampling error, should be better estimators of the true overall effect than studies with large standard errors. Pooled effects in mata-analyses give effect sizes with smaller standard errors (e.g. higer precision) a greater weight, inverse-variance weighting.
+
+## Random-effects model
+
+It might be unrealistic to assume studies in a meta-analysis are always completely homogeneous, e.g. the study of interest might be measured in different ways, or the length of exposure varies, or the target populations are not identical. In such cases there may be considerable between-study heterogeneity in the true effects. The random-effects model assumes effects of individual studies differ not only in sampling error alone but in other sources of variance.
+
+The random-effects model assumes there is not only one true effect size but a distribution of true effect sizes, therefore the model estimates the mean of the distribution of true effects. This model does, however, give more attention to small studies when calculating the pooled effect than the fixed-effects model.
+
+### Estimators of the Between-Study Heterogeneity
+
+## 
+
+Due to the lack of study homogeneity a random-effects model is preferred, however for comparison, models will be run with both fixed- and random-effects.
+
+# Definition of R model terms
+
+TE = specifies the effect size variable lower = specifies variable that contains the lower limit of confidence interval upper = specifies variable that contains the upper limit of confidence interval studlab = study/article label sm = summary measure common = indicates a fixed-effects model should be run random = indicates a random-effects model should be run method.tau = defines the r2 estimator method.random.ci - controls how confidence internals should be calculated when using the random-effects model data = data table to undertake analysis with
+
+# Packages and Libraries {.unlisted .hidden}
+
+```{r}
+#| title: Libraries
+#| include: false
+
+if (!require("pacman")) install.packages("pacman"); library(pacman)
+
+pacman::p_load(quarto, tidyverse, dplyr, reshape2, ggplot2, meta, metasens) # Install & load packages
+```
+
+# Data Wrangling
+
+# Visualisations {.tabset}
+
+# To do
+
+-   \[\] Get data excel from MH
+
+-   \[\] Tidy variables in R
+
+-   \[\] Standardised effect sizes & associated CIs
+
+-   \[\]
+
+# Useful links
+
+[Doing Meta-Analysis with R: A Hands-On Guide](https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/) - very useful resource for undertaking a meta-analysis using R.
+
+# References
+---
