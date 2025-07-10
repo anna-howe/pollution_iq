@@ -1,0 +1,17 @@
+---
+title: "Meta-analysis: Pollution and IQ"
+author:
+  name: "Anna Howe"
+  affiliation: "University of Canterbury"
+date: today
+bibliography: refs.bib
+from: markdown+emoji
+format:
+  html:
+    toc: true
+    code-fold: false
+    link-external-newwindow: true
+theme:
+  light: flatly
+  dark: darkly
+---
