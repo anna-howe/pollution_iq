@@ -4,7 +4,7 @@ author:
   name: "Anna Howe"
   affiliation: "University of Canterbury"
 date: today
-bibliography: refs.bib
+
 from: markdown+emoji
 format:
   html:
