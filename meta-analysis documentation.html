@@ -22,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -214,8 +249,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#meta-analysis-model-assumptions" id="toc-meta-analysis-model-assumptions" class="nav-link" data-scroll-target="#meta-analysis-model-assumptions">Meta-analysis Model Assumptions</a>
+  <li><a href="#meta-analysis-model-assumptions" id="toc-meta-analysis-model-assumptions" class="nav-link active" data-scroll-target="#meta-analysis-model-assumptions">Meta-analysis Model Assumptions</a>
   <ul class="collapse">
   <li><a href="#fixed-effects-model" id="toc-fixed-effects-model" class="nav-link" data-scroll-target="#fixed-effects-model">Fixed-effects model</a></li>
   <li><a href="#random-effects-model" id="toc-random-effects-model" class="nav-link" data-scroll-target="#random-effects-model">Random-effects model</a>
@@ -225,13 +259,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#definition-of-r-model-terms" id="toc-definition-of-r-model-terms" class="nav-link" data-scroll-target="#definition-of-r-model-terms">Definition of R model terms</a></li>
-  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data Wrangling</a></li>
+  <li><a href="#data-wrangling" id="toc-data-wrangling" class="nav-link" data-scroll-target="#data-wrangling">Data Wrangling</a>
+  <ul class="collapse">
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  </ul></li>
   <li><a href="#visualisations" id="toc-visualisations" class="nav-link" data-scroll-target="#visualisations">Visualisations</a></li>
   <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do</a></li>
-  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a>
-  <ul class="collapse">
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"># References</a></li>
-  </ul></li>
+  <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
   </ul>
 </nav>
 </div>
@@ -268,6 +302,12 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
   
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">July 11, 2025</p>
+    </div>
+  </div>
     
   </div>
   
@@ -276,10 +316,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
 <p>This page is designed to provide detail on the meta-analysis undertaken for the review “Air pollution (PM2.5 and NO2) exposure and child IQ: a systematic review and meta-analysis of prospective and longitudinal evidence”</p>
-</section>
 <section id="meta-analysis-model-assumptions" class="level1">
 <h1>Meta-analysis Model Assumptions</h1>
 <section id="fixed-effects-model" class="level2">
@@ -309,6 +346,450 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-wrangling" class="level1">
 <h1>Data Wrangling</h1>
+<section id="create-data-table" class="level2 unlisted hidden">
+<h2 class="unlisted hidden anchored" data-anchor-id="create-data-table">Create data table</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>review_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">study =</span> <span class="fu">c</span>(<span class="st">"Chiu et al. (2016)"</span>, <span class="st">"Chiu et al. (2016)"</span>, <span class="st">"Guilbert et al. (2023)"</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Harris et al. (2015)"</span>, <span class="st">"Harris et al. (2015)"</span>, <span class="st">"Harris et al. (2015)"</span>, </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Holm et al. (2023)"</span>, <span class="st">"Hsu et al. (2024)"</span>, <span class="st">"Kusters et al. (2022)"</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Kusters et al. (2022)"</span>, <span class="st">"Ni et al. (2022)"</span>, <span class="st">"Ni et al. (2022)"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Ni et al. (2022)"</span>, <span class="st">"Ni et al. (2022)"</span>, <span class="st">"Ni et al. (2022)"</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Ni et al. (2022)"</span>, <span class="st">"Porta et al. (2016)"</span>, <span class="st">"Sun et al. (2023)"</span>, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Sun et al. (2023)"</span>, <span class="st">"Sun et al. (2023)"</span>, <span class="st">"Tokuda et al. (2023)"</span>, </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Tokuda et al. (2023)"</span>, <span class="st">"Tokuda et al. (2023)"</span>, <span class="st">"Tokuda et al. (2023)"</span>,</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Wang et al. (2017)"</span>, <span class="st">"Whitworth et al. (2024)"</span>, <span class="st">"Freire et al. (2010)"</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Freire et al. (2010)"</span>, <span class="st">"Guilbert et al. (2023)"</span>, <span class="st">"Kusters et al. (2022)"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Kusters et al. (2022)"</span>, <span class="st">"Ni et al. (2022)"</span>, <span class="st">"Ni et al. (2022)"</span>, </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="st">"Ni et al. (2022)"</span>, <span class="st">"Porta et al. (2016)"</span>),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">exposure_window =</span> <span class="fu">c</span>(<span class="st">"Averaged across sensitive window"</span>, <span class="st">"Averaged over entire pregnancy"</span>, </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Comparable data not available"</span>, <span class="st">"3rd trimester"</span>, <span class="st">"Birth‒age 6"</span>, </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Year before cognitive testing"</span>, <span class="st">"Pregnancy"</span>, <span class="st">"Pregnancy"</span>,</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pregnancy"</span>, <span class="st">"Childhood"</span>, <span class="st">"1st trimester"</span>, <span class="st">"2nd trimester"</span>, </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"3rd trimester"</span>, <span class="st">"Pregnancy"</span>, <span class="st">"0–2 years"</span>, <span class="st">"2–4 years"</span>, <span class="st">"Pregnancy"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"1st trimester"</span>, <span class="st">"2nd trimester"</span>, <span class="st">"3rd trimester"</span>, <span class="st">"Pregnancy"</span>, </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"0–1 year"</span>, <span class="st">"1–3 years"</span>, <span class="st">"3–5 years"</span>, <span class="st">"Age 9–11 years"</span>, </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Age 3.5–4.1 years"</span>, <span class="st">"Childhood"</span>, <span class="st">"Childhood"</span>, </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Comparable data not available"</span>, <span class="st">"Pregnancy"</span>, <span class="st">"Childhood"</span>, </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"1st trimester"</span>, <span class="st">"2nd trimester"</span>, <span class="st">"3rd trimester"</span>, <span class="st">"Pregnancy"</span>),</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">exposure_level =</span> <span class="fu">c</span>(<span class="st">"Change in full-scale IQ per unit increase"</span>, </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Change in full-scale IQ per unit increase"</span>, <span class="st">"NA"</span>, </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 3.8 μg/m3 increase"</span>, <span class="st">"per 2.1 μg/m3 increase"</span>, </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 2.5 μg/m3 increase"</span>, <span class="st">"per 3 μg/m3 increase"</span>, </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 1 μg/m3 increase"</span>, <span class="st">"per 5 μg/m3 increase"</span>, <span class="st">"per 5 μg/m3 increase"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 2 μg/m3 increase"</span>, <span class="st">"per 2 μg/m3 increase"</span>, <span class="st">"per 2 μg/m3 increase"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 2 μg/m3 increase"</span>, <span class="st">"per 2 μg/m3 increase"</span>, <span class="st">"per 2 μg/m3 increase"</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 10 μg/m3 increase"</span>, <span class="st">"per 5 μg/m3 increase"</span>, </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 5 μg/m3 increase"</span>, <span class="st">"per 5 μg/m3 increase"</span>, <span class="st">"NA"</span>, <span class="st">"NA"</span>, <span class="st">"NA"</span>, <span class="st">"NA"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 7.3 μg/m3 increase"</span>, <span class="st">"per 5 μg/m3 increase"</span>, <span class="st">"15.40-24.75"</span>,</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"&gt;24.75"</span>, <span class="st">"NA"</span>, <span class="st">"per 10μg/m3 increase"</span>, <span class="st">"per 10μg/m3 increase"</span>, </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 2 ppb NO2"</span>, <span class="st">"per 2 ppb NO2"</span>, <span class="st">"per 2 ppb NO2"</span>, </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"per 10 μg/m3 increase"</span>),</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">standardisation_factor =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="cn">NA</span>, <span class="fl">3.8</span>, <span class="fl">2.1</span>, <span class="fl">2.5</span>, <span class="dv">3</span>, <span class="dv">10</span>, <span class="dv">5</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">5</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>                             <span class="dv">5</span>, <span class="dv">5</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="fl">7.3</span>, <span class="dv">5</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">10</span>),</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">exposure =</span> <span class="fu">c</span>(<span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>              <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>              <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>,</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>              <span class="st">"PM2.5"</span>, <span class="st">"PM2.5"</span>, <span class="st">"NO2"</span>, <span class="st">"NO2"</span>, <span class="st">"NO2"</span>, <span class="st">"NO2"</span>, <span class="st">"NO2"</span>, <span class="st">"NO2"</span>, <span class="st">"NO2"</span>, <span class="st">"NO2"</span>,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>              <span class="st">"NO2"</span>),</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">effect_size =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.65</span>, <span class="sc">-</span><span class="fl">1.02</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="fl">0.20</span>, <span class="fl">0.70</span>, <span class="fl">1.10</span>, <span class="sc">-</span><span class="fl">1.79</span>, <span class="sc">-</span><span class="fl">0.35</span>, <span class="fl">0.77</span>, <span class="fl">1.18</span>, <span class="fl">0.80</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">-</span><span class="fl">0.48</span>, <span class="sc">-</span><span class="fl">0.17</span>, <span class="fl">0.18</span>, <span class="sc">-</span><span class="fl">0.80</span>, <span class="sc">-</span><span class="fl">2.18</span>, <span class="sc">-</span><span class="fl">1.90</span>, <span class="fl">1.34</span>, <span class="fl">0.18</span>, <span class="fl">0.16</span>, <span class="fl">0.66</span>, <span class="fl">1.00</span>,</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>                  <span class="fl">1.02</span>, <span class="fl">0.79</span>, <span class="sc">-</span><span class="fl">2.00</span>, <span class="fl">2.56</span>, <span class="sc">-</span><span class="fl">1.07</span>, <span class="sc">-</span><span class="fl">4.19</span>, <span class="cn">NA</span>, <span class="fl">0.53</span>, <span class="fl">0.13</span>, <span class="fl">0.37</span>, <span class="fl">0.16</span>, <span class="sc">-</span><span class="fl">0.27</span>,</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">-</span><span class="fl">1.10</span>),</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_lower=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.41</span>, <span class="sc">-</span><span class="fl">2.78</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="fl">1.40</span>, <span class="sc">-</span><span class="fl">0.40</span>, <span class="fl">0.00</span>, <span class="sc">-</span><span class="fl">2.98</span>, <span class="sc">-</span><span class="fl">0.68</span>, <span class="sc">-</span><span class="fl">2.24</span>, <span class="sc">-</span><span class="fl">2.74</span>, <span class="sc">-</span><span class="fl">0.01</span>,</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>              <span class="sc">-</span><span class="fl">1.27</span>, <span class="sc">-</span><span class="fl">0.88</span>, <span class="sc">-</span><span class="fl">1.25</span>, <span class="sc">-</span><span class="fl">3.00</span>, <span class="sc">-</span><span class="fl">5.00</span>, <span class="sc">-</span><span class="fl">7.90</span>, <span class="sc">-</span><span class="fl">2.71</span>, <span class="sc">-</span><span class="fl">0.50</span>, <span class="sc">-</span><span class="fl">0.80</span>, <span class="fl">0.30</span>, <span class="fl">0.54</span>,</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.61</span>, <span class="fl">0.44</span>, <span class="fl">4.84</span>, <span class="fl">1.53</span>, <span class="sc">-</span><span class="fl">9.99</span>, <span class="sc">-</span><span class="fl">14.02</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="fl">0.28</span>, <span class="sc">-</span><span class="fl">0.59</span>, <span class="sc">-</span><span class="fl">0.03</span>, <span class="sc">-</span><span class="fl">0.25</span>, <span class="sc">-</span><span class="fl">0.67</span>,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>              <span class="sc">-</span><span class="fl">2.30</span>),</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_upper =</span> <span class="fu">c</span>(<span class="fl">0.10</span>, <span class="fl">0.74</span>, <span class="cn">NA</span>, <span class="fl">1.10</span>, <span class="fl">1.70</span>, <span class="fl">2.20</span>, <span class="sc">-</span><span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.01</span>, <span class="fl">3.78</span>, <span class="fl">5.10</span>, <span class="fl">1.62</span>, <span class="fl">0.31</span>, <span class="fl">0.54</span>,</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>               <span class="fl">1.62</span>, <span class="fl">1.41</span>, <span class="fl">0.64</span>, <span class="fl">4.10</span>, <span class="fl">0.04</span>, <span class="fl">0.87</span>, <span class="fl">0.48</span>, <span class="fl">1.45</span>, <span class="fl">1.82</span>, <span class="fl">1.72</span>, <span class="fl">1.43</span>, <span class="fl">0.84</span>, <span class="fl">3.57</span>,</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>               <span class="fl">7.85</span>, <span class="fl">5.64</span>, <span class="cn">NA</span>, <span class="fl">1.34</span>, <span class="fl">0.85</span>, <span class="fl">0.77</span>, <span class="fl">0.57</span>, <span class="fl">0.13</span>, <span class="fl">0.10</span>)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(review_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 14%">
+<col style="width: 5%">
+<col style="width: 7%">
+<col style="width: 5%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">study</th>
+<th style="text-align: left;">exposure_window</th>
+<th style="text-align: left;">exposure_level</th>
+<th style="text-align: right;">standardisation_factor</th>
+<th style="text-align: left;">exposure</th>
+<th style="text-align: right;">effect_size</th>
+<th style="text-align: right;">ci_lower</th>
+<th style="text-align: right;">ci_upper</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Chiu et al.&nbsp;(2016)</td>
+<td style="text-align: left;">Averaged across sensitive window</td>
+<td style="text-align: left;">Change in full-scale IQ per unit increase</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-0.65</td>
+<td style="text-align: right;">-1.41</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chiu et al.&nbsp;(2016)</td>
+<td style="text-align: left;">Averaged over entire pregnancy</td>
+<td style="text-align: left;">Change in full-scale IQ per unit increase</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-1.02</td>
+<td style="text-align: right;">-2.78</td>
+<td style="text-align: right;">0.74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Guilbert et al.&nbsp;(2023)</td>
+<td style="text-align: left;">Comparable data not available</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Harris et al.&nbsp;(2015)</td>
+<td style="text-align: left;">3rd trimester</td>
+<td style="text-align: left;">per 3.8 μg/m3 increase</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-0.20</td>
+<td style="text-align: right;">-1.40</td>
+<td style="text-align: right;">1.10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Harris et al.&nbsp;(2015)</td>
+<td style="text-align: left;">Birth‒age 6</td>
+<td style="text-align: left;">per 2.1 μg/m3 increase</td>
+<td style="text-align: right;">2.1</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">0.70</td>
+<td style="text-align: right;">-0.40</td>
+<td style="text-align: right;">1.70</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Harris et al.&nbsp;(2015)</td>
+<td style="text-align: left;">Year before cognitive testing</td>
+<td style="text-align: left;">per 2.5 μg/m3 increase</td>
+<td style="text-align: right;">2.5</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">1.10</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">2.20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Holm et al.&nbsp;(2023)</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">per 3 μg/m3 increase</td>
+<td style="text-align: right;">3.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-1.79</td>
+<td style="text-align: right;">-2.98</td>
+<td style="text-align: right;">-0.58</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hsu et al.&nbsp;(2024)</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">per 1 μg/m3 increase</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-0.35</td>
+<td style="text-align: right;">-0.68</td>
+<td style="text-align: right;">-0.01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kusters et al.&nbsp;(2022)</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">per 5 μg/m3 increase</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">0.77</td>
+<td style="text-align: right;">-2.24</td>
+<td style="text-align: right;">3.78</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kusters et al.&nbsp;(2022)</td>
+<td style="text-align: left;">Childhood</td>
+<td style="text-align: left;">per 5 μg/m3 increase</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">1.18</td>
+<td style="text-align: right;">-2.74</td>
+<td style="text-align: right;">5.10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
+<td style="text-align: left;">1st trimester</td>
+<td style="text-align: left;">per 2 μg/m3 increase</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">0.80</td>
+<td style="text-align: right;">-0.01</td>
+<td style="text-align: right;">1.62</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
+<td style="text-align: left;">2nd trimester</td>
+<td style="text-align: left;">per 2 μg/m3 increase</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-0.48</td>
+<td style="text-align: right;">-1.27</td>
+<td style="text-align: right;">0.31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
+<td style="text-align: left;">3rd trimester</td>
+<td style="text-align: left;">per 2 μg/m3 increase</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-0.17</td>
+<td style="text-align: right;">-0.88</td>
+<td style="text-align: right;">0.54</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">per 2 μg/m3 increase</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">-1.25</td>
+<td style="text-align: right;">1.62</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
+<td style="text-align: left;">0–2 years</td>
+<td style="text-align: left;">per 2 μg/m3 increase</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-0.80</td>
+<td style="text-align: right;">-3.00</td>
+<td style="text-align: right;">1.41</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
+<td style="text-align: left;">2–4 years</td>
+<td style="text-align: left;">per 2 μg/m3 increase</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-2.18</td>
+<td style="text-align: right;">-5.00</td>
+<td style="text-align: right;">0.64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Porta et al.&nbsp;(2016)</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">per 10 μg/m3 increase</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-1.90</td>
+<td style="text-align: right;">-7.90</td>
+<td style="text-align: right;">4.10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sun et al.&nbsp;(2023)</td>
+<td style="text-align: left;">1st trimester</td>
+<td style="text-align: left;">per 5 μg/m3 increase</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">1.34</td>
+<td style="text-align: right;">-2.71</td>
+<td style="text-align: right;">0.04</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Sun et al.&nbsp;(2023)</td>
+<td style="text-align: left;">2nd trimester</td>
+<td style="text-align: left;">per 5 μg/m3 increase</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">0.18</td>
+<td style="text-align: right;">-0.50</td>
+<td style="text-align: right;">0.87</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Sun et al.&nbsp;(2023)</td>
+<td style="text-align: left;">3rd trimester</td>
+<td style="text-align: left;">per 5 μg/m3 increase</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">-0.80</td>
+<td style="text-align: right;">0.48</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tokuda et al.&nbsp;(2023)</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">0.66</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: right;">1.45</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tokuda et al.&nbsp;(2023)</td>
+<td style="text-align: left;">0–1 year</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.54</td>
+<td style="text-align: right;">1.82</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Tokuda et al.&nbsp;(2023)</td>
+<td style="text-align: left;">1–3 years</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">0.61</td>
+<td style="text-align: right;">1.72</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Tokuda et al.&nbsp;(2023)</td>
+<td style="text-align: left;">3–5 years</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">0.79</td>
+<td style="text-align: right;">0.44</td>
+<td style="text-align: right;">1.43</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Wang et al.&nbsp;(2017)</td>
+<td style="text-align: left;">Age 9–11 years</td>
+<td style="text-align: left;">per 7.3 μg/m3 increase</td>
+<td style="text-align: right;">7.3</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">-2.00</td>
+<td style="text-align: right;">4.84</td>
+<td style="text-align: right;">0.84</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Whitworth et al.&nbsp;(2024)</td>
+<td style="text-align: left;">Age 3.5–4.1 years</td>
+<td style="text-align: left;">per 5 μg/m3 increase</td>
+<td style="text-align: right;">5.0</td>
+<td style="text-align: left;">PM2.5</td>
+<td style="text-align: right;">2.56</td>
+<td style="text-align: right;">1.53</td>
+<td style="text-align: right;">3.57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Freire et al.&nbsp;(2010)</td>
+<td style="text-align: left;">Childhood</td>
+<td style="text-align: left;">15.40-24.75</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: right;">-1.07</td>
+<td style="text-align: right;">-9.99</td>
+<td style="text-align: right;">7.85</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Freire et al.&nbsp;(2010)</td>
+<td style="text-align: left;">Childhood</td>
+<td style="text-align: left;">&gt;24.75</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: right;">-4.19</td>
+<td style="text-align: right;">-14.02</td>
+<td style="text-align: right;">5.64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Guilbert et al.&nbsp;(2023)</td>
+<td style="text-align: left;">Comparable data not available</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kusters et al.&nbsp;(2022)</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">per 10μg/m3 increase</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: right;">0.53</td>
+<td style="text-align: right;">-0.28</td>
+<td style="text-align: right;">1.34</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kusters et al.&nbsp;(2022)</td>
+<td style="text-align: left;">Childhood</td>
+<td style="text-align: left;">per 10μg/m3 increase</td>
+<td style="text-align: right;">1.0</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: right;">0.13</td>
+<td style="text-align: right;">-0.59</td>
+<td style="text-align: right;">0.85</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
+<td style="text-align: left;">1st trimester</td>
+<td style="text-align: left;">per 2 ppb NO2</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: right;">0.37</td>
+<td style="text-align: right;">-0.03</td>
+<td style="text-align: right;">0.77</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
+<td style="text-align: left;">2nd trimester</td>
+<td style="text-align: left;">per 2 ppb NO2</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: right;">0.16</td>
+<td style="text-align: right;">-0.25</td>
+<td style="text-align: right;">0.57</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
+<td style="text-align: left;">3rd trimester</td>
+<td style="text-align: left;">per 2 ppb NO2</td>
+<td style="text-align: right;">2.0</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: right;">-0.27</td>
+<td style="text-align: right;">-0.67</td>
+<td style="text-align: right;">0.13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Porta et al.&nbsp;(2016)</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">per 10 μg/m3 increase</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: right;">-1.10</td>
+<td style="text-align: right;">-2.30</td>
+<td style="text-align: right;">0.10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 </section>
 <section id="visualisations" class="level1 tabset">
 <h1 class="tabset">Visualisations</h1>
@@ -316,7 +797,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="to-do" class="level1">
 <h1>To do</h1>
 <ul>
-<li><p>[] Get data excel from MH</p></li>
+<li><p><label><input type="checkbox" checked="">Get data from MH</label></p></li>
 <li><p>[] Tidy variables in R</p></li>
 <li><p>[] Standardised effect sizes &amp; associated CIs</p></li>
 <li><p>[]</p></li>
@@ -325,9 +806,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="useful-links" class="level1">
 <h1>Useful links</h1>
 <p><a href="https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/">Doing Meta-Analysis with R: A Hands-On Guide</a> - very useful resource for undertaking a meta-analysis using R.</p>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references"># References</h2>
-</section>
+<hr>
 </section>
 
 </main>

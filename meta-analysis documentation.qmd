@@ -51,7 +51,7 @@ TE = specifies the effect size variable lower = specifies variable that contains
 
 if (!require("pacman")) install.packages("pacman"); library(pacman)
 
-pacman::p_load(quarto, tidyverse, dplyr, reshape2, ggplot2, meta, metasens) # Install & load packages
+pacman::p_load(quarto, knitr, tidyverse, dplyr, reshape2, ggplot2, meta, metasens) # Install & load packages
 ```
 
 # Data Wrangling
@@ -116,8 +116,9 @@ review_data <- tibble(
 ```
 ## Data
 ```{r}
-view(review_data)
+knitr::kable(review_data)
 ```
+
 
 # Visualisations {.tabset}
 
