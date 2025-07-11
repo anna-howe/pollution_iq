@@ -55,6 +55,7 @@ pacman::p_load(quarto, tidyverse, dplyr, reshape2, ggplot2, meta, metasens) # In
 ```
 
 # Data Wrangling
+## Create data table {.unlisted .hidden}
 ```{r}
 review_data <- tibble(
   study = c("Chiu et al. (2016)", "Chiu et al. (2016)", "Guilbert et al. (2023)", 
@@ -71,37 +72,51 @@ review_data <- tibble(
             "Ni et al. (2022)", "Porta et al. (2016)"),
   exposure_window = c("Averaged across sensitive window", "Averaged over entire pregnancy", 
                       "Comparable data not available", "3rd trimester", "Birth‒age 6", 
-                      "Year before cognitive testing", "Pregnancy", "Pregnancy", "Pregnancy",
-                      "Childhood", "1st trimester", "2nd trimester", "3rd trimester", "Pregnancy", 
-                      "0–2 years", "2–4 years", "Pregnancy", "1st trimester", "2nd trimester", 
-                      "3rd trimester", "Pregnancy", "0–1 year", "1–3 years", "3–5 years", "Age 9–11 years", 
-                      "Age 3.5–4.1 years", "Childhood", "Childhood", "Comparable data not available", 
-                      "Pregnancy", "Childhood", "1st trimester", "2nd trimester", "3rd trimester", 
-                      "Pregnancy"),
-  exposure_level = c("Change in full-scale IQ per unit increase", "Change in full-scale IQ per unit increase", 
-                     "NA", "per 3.8 μg/m3 increase", "per 2.1 μg/m3 increase", "per 2.5 μg/m3 increase", 
-                     "per 3 μg/m3 increase", "per 1 μg/m3 increase", "per 5 μg/m3 increase", "per 5 μg/m3 increase",
-                     "per 2 μg/m3 increase", "per 2 μg/m3 increase", "per 2 μg/m3 increase", "per 2 μg/m3 increase", 
-                     "per 2 μg/m3 increase", "per 2 μg/m3 increase", "per 10 μg/m3 increase", "per 5 μg/m3 increase", 
-                     "per 5 μg/m3 increase", "per 5 μg/m3 increase", "NA", "NA", "NA", "NA", "per 7.3 μg/m3 increase", 
-                     "per 5 μg/m3 increase", "15.40-24.75", ">24.75", "NA", "per 10μg/m3 increase", 
-                     "per 10μg/m3 increase", "per 2 ppb NO2", "per 2 ppb NO2", "per 2 ppb NO2", "per 10 μg/m3 increase"),
-  standardisation_factor = c(10, 10, NA, 3.8, 2.1, 2.5, 3, 10, 5, 5, 2, 2, 2, 2, 2, 2, 1, 5, 5, 5,
-                        NA, NA, NA, NA, 7.3, 5, NA, NA, 1, 1, 2, 2, 2, 10),
+                      "Year before cognitive testing", "Pregnancy", "Pregnancy",
+                      "Pregnancy", "Childhood", "1st trimester", "2nd trimester", 
+                      "3rd trimester", "Pregnancy", "0–2 years", "2–4 years", "Pregnancy",
+                      "1st trimester", "2nd trimester", "3rd trimester", "Pregnancy", 
+                      "0–1 year", "1–3 years", "3–5 years", "Age 9–11 years", 
+                      "Age 3.5–4.1 years", "Childhood", "Childhood", 
+                      "Comparable data not available", "Pregnancy", "Childhood", 
+                      "1st trimester", "2nd trimester", "3rd trimester", "Pregnancy"),
+  exposure_level = c("Change in full-scale IQ per unit increase", 
+                     "Change in full-scale IQ per unit increase", "NA", 
+                     "per 3.8 μg/m3 increase", "per 2.1 μg/m3 increase", 
+                     "per 2.5 μg/m3 increase", "per 3 μg/m3 increase", 
+                     "per 1 μg/m3 increase", "per 5 μg/m3 increase", "per 5 μg/m3 increase",
+                     "per 2 μg/m3 increase", "per 2 μg/m3 increase", "per 2 μg/m3 increase",
+                     "per 2 μg/m3 increase", "per 2 μg/m3 increase", "per 2 μg/m3 increase",
+                     "per 10 μg/m3 increase", "per 5 μg/m3 increase", 
+                     "per 5 μg/m3 increase", "per 5 μg/m3 increase", "NA", "NA", "NA", "NA",
+                     "per 7.3 μg/m3 increase", "per 5 μg/m3 increase", "15.40-24.75",
+                     ">24.75", "NA", "per 10μg/m3 increase", "per 10μg/m3 increase", 
+                     "per 2 ppb NO2", "per 2 ppb NO2", "per 2 ppb NO2", 
+                     "per 10 μg/m3 increase"),
+  standardisation_factor = c(10, 10, NA, 3.8, 2.1, 2.5, 3, 10, 5, 5, 2, 2, 2, 2, 2, 2, 1, 5,
+                             5, 5, NA, NA, NA, NA, 7.3, 5, NA, NA, NA, 1, 1, 2, 2, 2, 10),
   exposure = c("PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5",
-              "PM2.5", "PM2.5", "PM2.5", "PM2.5", "NO2", "NO2", "NO2", "NO2", "NO2", 
-              "NO2", "NO2", "NO2", "NO2"),
-  effect_size = c(-0.65, -1.02, NA, -0.20, 0.70, 1.10, -1.79, -0.35, 0.77, 1.18, 0.80, -0.48, 
-                 -0.17, 0.18, -0.80, -2.18, -1.90, 1.34, 0.18, 0.16, 0.66, 1.00, 1.02, 0.79, 
-                 -2.00, 2.56, -1.07, -4.19, NA, 0.53, 0.13, 0.37, 0.16, -0.27, -1.10),
-  ci_lower= c(-1.41, -2.78, NA, -1.40, -0.40, 0.00, -2.98, -0.68, -2.24, -2.74, -0.01, -1.27,
-           -0.88, -1.25, -3.00, -5.00, -7.90, -2.71, -0.50, -0.80, 0.30, 0.54, 0.61, 0.44, 
-           -4.84, 1.53, -9.99, -14.02, NA, -0.28, -0.59, -0.03, -0.25, -0.67, -2.30),
-  ci_upper = c(0.10, 0.74, NA, 1.10, 1.70, 2.20, -0.58, -0.01, 3.78, 5.10, 1.62, 0.31, 0.54, 
-           1.62, 1.41, 0.64, 4.10, 0.04, 0.87, 0.48, 1.45, 1.82, 1.72, 1.43, 0.84, 3.57, 
-           7.85, 5.64, NA, 1.34, 0.85, 0.77, 0.57, 0.13, 0.10)
+              "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5",
+              "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5",
+              "PM2.5", "PM2.5", "NO2", "NO2", "NO2", "NO2", "NO2", "NO2", "NO2", "NO2",
+              "NO2"),
+  effect_size = c(-0.65, -1.02, NA, -0.20, 0.70, 1.10, -1.79, -0.35, 0.77, 1.18, 0.80,
+                  -0.48, -0.17, 0.18, -0.80, -2.18, -1.90, 1.34, 0.18, 0.16, 0.66, 1.00,
+                  1.02, 0.79, -2.00, 2.56, -1.07, -4.19, NA, 0.53, 0.13, 0.37, 0.16, -0.27,
+                  -1.10),
+  ci_lower= c(-1.41, -2.78, NA, -1.40, -0.40, 0.00, -2.98, -0.68, -2.24, -2.74, -0.01,
+              -1.27, -0.88, -1.25, -3.00, -5.00, -7.90, -2.71, -0.50, -0.80, 0.30, 0.54,
+              0.61, 0.44, 4.84, 1.53, -9.99, -14.02, NA, -0.28, -0.59, -0.03, -0.25, -0.67,
+              -2.30),
+  ci_upper = c(0.10, 0.74, NA, 1.10, 1.70, 2.20, -0.58, -0.01, 3.78, 5.10, 1.62, 0.31, 0.54,
+               1.62, 1.41, 0.64, 4.10, 0.04, 0.87, 0.48, 1.45, 1.82, 1.72, 1.43, 0.84, 3.57,
+               7.85, 5.64, NA, 1.34, 0.85, 0.77, 0.57, 0.13, 0.10)
 )
 
+```
+## Data
+```{r}
+view(review_data)
 ```
 
 # Visualisations {.tabset}
