@@ -93,8 +93,9 @@ review_data <- tibble(
                      ">24.75", "NA", "per 10μg/m3 increase", "per 10μg/m3 increase", 
                      "per 2 ppb NO2", "per 2 ppb NO2", "per 2 ppb NO2", 
                      "per 10 μg/m3 increase"),
-  standardisation_factor = c(10, 10, NA, 3.8, 2.1, 2.5, 3, 10, 5, 5, 2, 2, 2, 2, 2, 2, 1, 5,
-                             5, 5, NA, NA, NA, NA, 7.3, 5, NA, NA, NA, 1, 1, 2, 2, 2, 10),
+  standardisation_factor = c(1, 1, NA, 3.8, 2.1, 2.5, 3, 1, 5, 5, 2, 2, 2, 2, 2, 2, 10,
+                             5, 5, 5, NA, NA, NA, NA, 7.3, 5, NA, NA, NA, 10, 10, 2, 2, 2,
+                             10),
   exposure = c("PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5",
               "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5",
               "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5",
@@ -114,10 +115,31 @@ review_data <- tibble(
 )
 
 ```
-## Data
+## Imported Data
 ```{r}
 knitr::kable(review_data)
 ```
+
+
+## Create standardised data {.unlisted .hidden}
+```{r}
+
+standardised_review_data <- 
+  mutate(review_data,
+         standardised_effect_size = effect_size * (10/standardisation_factor),
+         standardised_ci_lower = ci_lower * (10/standardisation_factor),
+         standardised_ci_upper = ci_upper * (10/standardisation_factor)) 
+
+standardised_review_data <- standardised_review_data |>
+  mutate(across(c('standardised_effect_size','standardised_ci_lower',
+                  'standardised_ci_upper'), round, 2))
+
+```
+## Standardised Data
+```{r}
+knitr::kable(standardised_review_data)
+```
+
 
 
 # Visualisations {.tabset}
