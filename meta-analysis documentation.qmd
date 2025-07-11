@@ -15,6 +15,7 @@ format:
 theme:
   light: flatly
   dark: darkly
+
 ---
 
 This page is designed to provide detail on the meta-analysis undertaken for the review "Air pollution (PM2.5 and NO2) exposure and child IQ: a systematic review and meta-analysis of prospective and longitudinal evidence"
@@ -107,7 +108,7 @@ review_data <- tibble(
                   -1.10),
   ci_lower= c(-1.41, -2.78, NA, -1.40, -0.40, 0.00, -2.98, -0.68, -2.24, -2.74, -0.01,
               -1.27, -0.88, -1.25, -3.00, -5.00, -7.90, -2.71, -0.50, -0.80, 0.30, 0.54,
-              0.61, 0.44, 4.84, 1.53, -9.99, -14.02, NA, -0.28, -0.59, -0.03, -0.25, -0.67,
+              0.61, 0.44, -4.84, 1.53, -9.99, -14.02, NA, -0.28, -0.59, -0.03, -0.25, -0.67,
               -2.30),
   ci_upper = c(0.10, 0.74, NA, 1.10, 1.70, 2.20, -0.58, -0.01, 3.78, 5.10, 1.62, 0.31, 0.54,
                1.62, 1.41, 0.64, 4.10, 0.04, 0.87, 0.48, 1.45, 1.82, 1.72, 1.43, 0.84, 3.57,
@@ -140,17 +141,48 @@ standardised_review_data <- standardised_review_data |>
 knitr::kable(standardised_review_data)
 ```
 
+# Overall Meta-analysis 
+
+## Run meta-analysis for PM {.unlisted .hidden}
+```{r}
+standardised_ppm_data <- standardised_review_data |>
+  filter(exposure == "PM2.5")
+
+m.gen=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+               upper=standardised_ci_upper,
+               studlab = study,
+               sm = "Effect Size",
+               common = TRUE,
+               random = TRUE,
+               method.tau = "DL",
+               method.random.ci = "HK",
+               data = standardised_ppm_data))
+
+```
+## Forrest Plots {.tabset}
+:::{.panel-tabset}
+# tab 1
+```{r}
+    forest(m.gen,
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       lefttabs = c("Author"))
+
+```
+# tab 2
+
+:::
 
 
-# Visualisations {.tabset}
 
 # To do
 
 -   [x] Get data from MH
 
--   \[\] Tidy variables in R
+-   [x] Import data into R
 
--   \[\] Standardised effect sizes & associated CIs
+-   [x] Standardised effect sizes & associated CIs
 
 -   \[\]
 

@@ -264,7 +264,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#imported-data" id="toc-imported-data" class="nav-link" data-scroll-target="#imported-data">Imported Data</a></li>
   <li><a href="#standardised-data" id="toc-standardised-data" class="nav-link" data-scroll-target="#standardised-data">Standardised Data</a></li>
   </ul></li>
-  <li><a href="#visualisations" id="toc-visualisations" class="nav-link" data-scroll-target="#visualisations">Visualisations</a></li>
+  <li><a href="#overall-meta-analysis" id="toc-overall-meta-analysis" class="nav-link" data-scroll-target="#overall-meta-analysis">Overall Meta-analysis</a>
+  <ul class="collapse">
+  <li><a href="#forrest-plots" id="toc-forrest-plots" class="nav-link" data-scroll-target="#forrest-plots">Forrest Plots</a></li>
+  </ul></li>
   <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do</a></li>
   <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
   </ul>
@@ -400,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>                  <span class="sc">-</span><span class="fl">1.10</span>),</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_lower=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">1.41</span>, <span class="sc">-</span><span class="fl">2.78</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="fl">1.40</span>, <span class="sc">-</span><span class="fl">0.40</span>, <span class="fl">0.00</span>, <span class="sc">-</span><span class="fl">2.98</span>, <span class="sc">-</span><span class="fl">0.68</span>, <span class="sc">-</span><span class="fl">2.24</span>, <span class="sc">-</span><span class="fl">2.74</span>, <span class="sc">-</span><span class="fl">0.01</span>,</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>              <span class="sc">-</span><span class="fl">1.27</span>, <span class="sc">-</span><span class="fl">0.88</span>, <span class="sc">-</span><span class="fl">1.25</span>, <span class="sc">-</span><span class="fl">3.00</span>, <span class="sc">-</span><span class="fl">5.00</span>, <span class="sc">-</span><span class="fl">7.90</span>, <span class="sc">-</span><span class="fl">2.71</span>, <span class="sc">-</span><span class="fl">0.50</span>, <span class="sc">-</span><span class="fl">0.80</span>, <span class="fl">0.30</span>, <span class="fl">0.54</span>,</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.61</span>, <span class="fl">0.44</span>, <span class="fl">4.84</span>, <span class="fl">1.53</span>, <span class="sc">-</span><span class="fl">9.99</span>, <span class="sc">-</span><span class="fl">14.02</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="fl">0.28</span>, <span class="sc">-</span><span class="fl">0.59</span>, <span class="sc">-</span><span class="fl">0.03</span>, <span class="sc">-</span><span class="fl">0.25</span>, <span class="sc">-</span><span class="fl">0.67</span>,</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.61</span>, <span class="fl">0.44</span>, <span class="sc">-</span><span class="fl">4.84</span>, <span class="fl">1.53</span>, <span class="sc">-</span><span class="fl">9.99</span>, <span class="sc">-</span><span class="fl">14.02</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="fl">0.28</span>, <span class="sc">-</span><span class="fl">0.59</span>, <span class="sc">-</span><span class="fl">0.03</span>, <span class="sc">-</span><span class="fl">0.25</span>, <span class="sc">-</span><span class="fl">0.67</span>,</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>              <span class="sc">-</span><span class="fl">2.30</span>),</span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  <span class="at">ci_upper =</span> <span class="fu">c</span>(<span class="fl">0.10</span>, <span class="fl">0.74</span>, <span class="cn">NA</span>, <span class="fl">1.10</span>, <span class="fl">1.70</span>, <span class="fl">2.20</span>, <span class="sc">-</span><span class="fl">0.58</span>, <span class="sc">-</span><span class="fl">0.01</span>, <span class="fl">3.78</span>, <span class="fl">5.10</span>, <span class="fl">1.62</span>, <span class="fl">0.31</span>, <span class="fl">0.54</span>,</span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>               <span class="fl">1.62</span>, <span class="fl">1.41</span>, <span class="fl">0.64</span>, <span class="fl">4.10</span>, <span class="fl">0.04</span>, <span class="fl">0.87</span>, <span class="fl">0.48</span>, <span class="fl">1.45</span>, <span class="fl">1.82</span>, <span class="fl">1.72</span>, <span class="fl">1.43</span>, <span class="fl">0.84</span>, <span class="fl">3.57</span>,</span>
@@ -684,7 +687,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td style="text-align: right;">7.3</td>
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: right;">-2.00</td>
-<td style="text-align: right;">4.84</td>
+<td style="text-align: right;">-4.84</td>
 <td style="text-align: right;">0.84</td>
 </tr>
 <tr class="even">
@@ -1173,10 +1176,10 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: right;">7.3</td>
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: right;">-2.00</td>
-<td style="text-align: right;">4.84</td>
+<td style="text-align: right;">-4.84</td>
 <td style="text-align: right;">0.84</td>
 <td style="text-align: right;">-2.74</td>
-<td style="text-align: right;">6.63</td>
+<td style="text-align: right;">-6.63</td>
 <td style="text-align: right;">1.15</td>
 </tr>
 <tr class="even">
@@ -1315,15 +1318,59 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </div>
 </section>
 </section>
-<section id="visualisations" class="level1 tabset">
-<h1 class="tabset">Visualisations</h1>
+<section id="overall-meta-analysis" class="level1">
+<h1>Overall Meta-analysis</h1>
+<section id="run-meta-analysis-for-pm" class="level2 unlisted hidden">
+<h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-pm">Run meta-analysis for PM</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>standardised_ppm_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>m.gen<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> standardised_ppm_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="forrest-plots" class="level2 tabset">
+<h2 class="tabset anchored" data-anchor-id="forrest-plots">Forrest Plots</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">tab 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">tab 2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.gen,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">lefttabs =</span> <span class="fu">c</span>(<span class="st">"Author"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="to-do" class="level1">
 <h1>To do</h1>
 <ul>
 <li><p><label><input type="checkbox" checked="">Get data from MH</label></p></li>
-<li><p>[] Tidy variables in R</p></li>
-<li><p>[] Standardised effect sizes &amp; associated CIs</p></li>
+<li><p><label><input type="checkbox" checked="">Import data into R</label></p></li>
+<li><p><label><input type="checkbox" checked="">Standardised effect sizes &amp; associated CIs</label></p></li>
 <li><p>[]</p></li>
 </ul>
 </section>
