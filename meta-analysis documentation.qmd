@@ -146,9 +146,9 @@ knitr::kable(standardised_review_data)
 ## Run meta-analysis for PM {.unlisted .hidden}
 ```{r}
 standardised_ppm_data <- standardised_review_data |>
-  filter(exposure == "PM2.5")
+  filter(exposure == "PM2.5" & exposure_level != "NA")
 
-m.gen=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+m.pm_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
                upper=standardised_ci_upper,
                studlab = study,
                sm = "Effect Size",
@@ -161,16 +161,18 @@ m.gen=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
 ```
 ## Forrest Plots {.tabset}
 :::{.panel-tabset}
-# tab 1
+# PM - Overall
 ```{r}
-    forest(m.gen,
+    forest(m.pm_overall,
        sortvar = TE,
        prediction = TRUE,
        print.tau2 = FALSE,
-       lefttabs = c("Author"))
+       lefttabs = c("Author"),
+       fontsize = 6,
+       spacing = 0.5)
 
 ```
-# tab 2
+# NO2 - Overall
 
 :::
 
