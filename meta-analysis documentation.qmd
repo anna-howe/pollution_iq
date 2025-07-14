@@ -35,14 +35,59 @@ It might be unrealistic to assume studies in a meta-analysis are always complete
 The random-effects model assumes there is not only one true effect size but a distribution of true effect sizes, therefore the model estimates the mean of the distribution of true effects. This model does, however, give more attention to small studies when calculating the pooled effect than the fixed-effects model.
 
 ### Estimators of the Between-Study Heterogeneity
+The I2 statistic (J. P. Higgins and Thompson 2002) quantifies between-study heterogeneity, and is directly based on Cochran’s Q. It is defined as the percentage of variability in the effect sizes that is not caused by sampling error. 
+An I2 value of approximately 50% indicates that about half of the variation is due to between-study heterogeneity.
+
+The “rule of thumb” for interpreting this statistic is (J. P. Higgins and Thompson 2002):
+    I2 = 25%: low heterogeneity
+    I2 = 50%: moderate heterogeneity
+    I2 = 75%: substantial heterogeneity.
+    
+The H2 statistic (J. P. Higgins and Thompson 2002) is also derived from Cochran’s Q, and
+similar to I2. When there is no between-study heterogeneity, H2 equals one (or smaller).
+Values greater than one indicate the presence of between-study heterogeneity. Compared to
+I2, it is far less common to find this statistic reported in published meta-analyses. 
 
 ## 
 
-Due to the lack of study homogeneity a random-effects model is preferred, however for comparison, models will be run with both fixed- and random-effects.
+Due to the aprior assumption the studies included in this review lack study homogeneity a random-effects model is preferred however, if heterogeneity is found to be less than 50%, models will be run with fixed-effects.
 
 # Definition of R model terms
 
-TE = specifies the effect size variable lower = specifies variable that contains the lower limit of confidence interval upper = specifies variable that contains the upper limit of confidence interval studlab = study/article label sm = summary measure common = indicates a fixed-effects model should be run random = indicates a random-effects model should be run method.tau = defines the r2 estimator method.random.ci - controls how confidence internals should be calculated when using the random-effects model data = data table to undertake analysis with
+- TE = specifies the effect size variable 
+- lower = specifies variable that contains the lower limit of confidence interval 
+- upper = specifies variable that contains the upper limit of confidence interval 
+- studlab = study/article label 
+- sm = summary measure 
+- common = indicates a fixed-effects model should be run 
+- random = indicates a random-effects model should be run 
+- method.tau = defines the r2 estimator 
+  - "DL", DerSimonian-Laird estimator (DerSimonian and Laird, 1986)
+- method.random.ci = controls how confidence internals are calculated for the
+random-effects model
+  - "HK", Method by Hartung and Knapp (2001a/b) based on a refined variance estimator for
+  the treatment estimate and a quantile of a t-distribution with k-1 degrees of freedom
+  where k corresponds to the number of studies in the meta-analysis. This method has shown
+  improved coverage probabilities compared to the classic random effects method (default).
+- ad.hoc.ci = ad hoc correction for the Hartung-Knapp (HK) method because in rare settings
+with very homogeneous treatment estimates, the Hartung-Knapp variance estimate can be
+arbitrarily small resulting in a very narrow confidence interval (Knapp and Hartung, 2003; Wiksten et al., 2016). An ad hoc variance correction has been proposed by utilising the variance estimate from the classic random effects model with the Hartung-Knapp method.as
+  - "se", use variance correction if HK standard error is smaller than standard error from
+  classic random effects meta-analysis (Knapp and Hartung, 2003).
+- method.tau.ci = 
+  - "J", Jackson method recommended for DerSimonian-Laird estimator of τ2
+
+- method.I2 = method to estimate the I-squared statistic
+  - "Q", based on heterogeneity statistic Q
+- data = data table to undertake analysis with
+
+method.tau = "DL",
+               method.random.ci = "HK",
+               method.predict = "HK",
+               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
+                                    #estimator of τ2
+               method.I2 = "Q",
+               method.bias = "Egger",
 
 # Packages and Libraries {.unlisted .hidden}
 
@@ -151,27 +196,79 @@ standardised_ppm_data <- standardised_review_data |>
 m.pm_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
                upper=standardised_ci_upper,
                studlab = study,
+               #prediction = exposure_level,
                sm = "Effect Size",
-               common = TRUE,
+               common = FALSE,
                random = TRUE,
                method.tau = "DL",
                method.random.ci = "HK",
+               method.predict = "HK",
+               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
+                                    #estimator of τ2
+               method.I2 = "Q",
+               method.bias = "Egger",
                data = standardised_ppm_data))
 
 ```
-## Forrest Plots {.tabset}
+## Forrest Plots - Style options {.tabset}
 :::{.panel-tabset}
-# PM - Overall
+# Standard (PM - Overall, random & mixed)
 ```{r}
     forest(m.pm_overall,
        sortvar = TE,
        prediction = TRUE,
        print.tau2 = FALSE,
-       lefttabs = c("Author"),
+       leftcols = c("studlab", "statistic", "pval", "seTE", "w.random"),
+       fontsize = 6,
+       spacing = 0.5)
+
+leftcols =c("studlab", "Exposure Period", "Sample Size", "I2", "Q", "pval.Q", "tau2" )
+leftlabs =c("Study", "Exposure Period", "Sample Size", "I2", "Q", "P", "Tau2" )
+
+```
+# JAMA (PM - Overall, random & mixed)
+```{r}
+    forest(m.pm_overall,
+       layout = "JAMA",
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       leftcols = c("studlab", "TE", "seTE", "w.random"),
+       leftlabs = c("Study", "g", "SE", "weight"),
        fontsize = 6,
        spacing = 0.5)
 
 ```
+
+# BMJ (PM - Overall, random & mixed)
+```{r}
+    forest(m.pm_overall,
+       layout = "BMJ",
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       leftcols = c("studlab", "TE", "seTE", "w.random"),
+       leftlabs = c("Study", "g", "SE", "weight"),
+       fontsize = 6,
+       spacing = 0.5)
+
+```
+
+
+# Cochrane’s Review Manager 5 (PM - Overall, random & mixed)
+```{r}
+    forest(m.pm_overall,
+       layout = "RevMan5",
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       leftcols = c("studlab", "TE", "seTE", "w.random"),
+       leftlabs = c("Study", "g", "SE", "weight"),
+       fontsize = 6,
+       spacing = 0.5)
+
+```
+
 # NO2 - Overall
 
 :::

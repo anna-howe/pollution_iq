@@ -266,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#overall-meta-analysis" id="toc-overall-meta-analysis" class="nav-link" data-scroll-target="#overall-meta-analysis">Overall Meta-analysis</a>
   <ul class="collapse">
-  <li><a href="#forrest-plots" id="toc-forrest-plots" class="nav-link" data-scroll-target="#forrest-plots">Forrest Plots</a></li>
+  <li><a href="#forrest-plots---style-options" id="toc-forrest-plots---style-options" class="nav-link" data-scroll-target="#forrest-plots---style-options">Forrest Plots - Style options</a></li>
   </ul></li>
   <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do</a></li>
   <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
@@ -334,16 +334,49 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The random-effects model assumes there is not only one true effect size but a distribution of true effect sizes, therefore the model estimates the mean of the distribution of true effects. This model does, however, give more attention to small studies when calculating the pooled effect than the fixed-effects model.</p>
 <section id="estimators-of-the-between-study-heterogeneity" class="level3">
 <h3 class="anchored" data-anchor-id="estimators-of-the-between-study-heterogeneity">Estimators of the Between-Study Heterogeneity</h3>
+<p>The I2 statistic (J. P. Higgins and Thompson 2002) quantifies between-study heterogeneity, and is directly based on Cochran’s Q. It is defined as the percentage of variability in the effect sizes that is not caused by sampling error. An I2 value of approximately 50% indicates that about half of the variation is due to between-study heterogeneity.</p>
+<p>The “rule of thumb” for interpreting this statistic is (J. P. Higgins and Thompson 2002): I2 = 25%: low heterogeneity I2 = 50%: moderate heterogeneity I2 = 75%: substantial heterogeneity.</p>
+<p>The H2 statistic (J. P. Higgins and Thompson 2002) is also derived from Cochran’s Q, and similar to I2. When there is no between-study heterogeneity, H2 equals one (or smaller). Values greater than one indicate the presence of between-study heterogeneity. Compared to I2, it is far less common to find this statistic reported in published meta-analyses.</p>
 </section>
 </section>
 <section id="section" class="level2">
 <h2 class="anchored" data-anchor-id="section"></h2>
-<p>Due to the lack of study homogeneity a random-effects model is preferred, however for comparison, models will be run with both fixed- and random-effects.</p>
+<p>Due to the aprior assumption the studies included in this review lack study homogeneity a random-effects model is preferred however, if heterogeneity is found to be less than 50%, models will be run with fixed-effects.</p>
 </section>
 </section>
 <section id="definition-of-r-model-terms" class="level1">
 <h1>Definition of R model terms</h1>
-<p>TE = specifies the effect size variable lower = specifies variable that contains the lower limit of confidence interval upper = specifies variable that contains the upper limit of confidence interval studlab = study/article label sm = summary measure common = indicates a fixed-effects model should be run random = indicates a random-effects model should be run method.tau = defines the r2 estimator method.random.ci - controls how confidence internals should be calculated when using the random-effects model data = data table to undertake analysis with</p>
+<ul>
+<li>TE = specifies the effect size variable</li>
+<li>lower = specifies variable that contains the lower limit of confidence interval</li>
+<li>upper = specifies variable that contains the upper limit of confidence interval</li>
+<li>studlab = study/article label</li>
+<li>sm = summary measure</li>
+<li>common = indicates a fixed-effects model should be run</li>
+<li>random = indicates a random-effects model should be run</li>
+<li>method.tau = defines the r2 estimator
+<ul>
+<li>“DL”, DerSimonian-Laird estimator (DerSimonian and Laird, 1986)</li>
+</ul></li>
+<li>method.random.ci = controls how confidence internals are calculated for the random-effects model
+<ul>
+<li>“HK”, Method by Hartung and Knapp (2001a/b) based on a refined variance estimator for the treatment estimate and a quantile of a t-distribution with k-1 degrees of freedom where k corresponds to the number of studies in the meta-analysis. This method has shown improved coverage probabilities compared to the classic random effects method (default).</li>
+</ul></li>
+<li>ad.hoc.ci = ad hoc correction for the Hartung-Knapp (HK) method because in rare settings with very homogeneous treatment estimates, the Hartung-Knapp variance estimate can be arbitrarily small resulting in a very narrow confidence interval (Knapp and Hartung, 2003; Wiksten et al., 2016). An ad hoc variance correction has been proposed by utilising the variance estimate from the classic random effects model with the Hartung-Knapp method.as
+<ul>
+<li>“se”, use variance correction if HK standard error is smaller than standard error from classic random effects meta-analysis (Knapp and Hartung, 2003).</li>
+</ul></li>
+<li>method.tau.ci =
+<ul>
+<li>“J”, Jackson method recommended for DerSimonian-Laird estimator of τ2</li>
+</ul></li>
+<li>method.I2 = method to estimate the I-squared statistic
+<ul>
+<li>“Q”, based on heterogeneity statistic Q</li>
+</ul></li>
+<li>data = data table to undertake analysis with</li>
+</ul>
+<p>method.tau = “DL”, method.random.ci = “HK”, method.predict = “HK”, method.tau.ci = “J”, #Jackson method recommended for DerSimonian-Laird #estimator of τ2 method.I2 = “Q”, method.bias = “Egger”,</p>
 </section>
 <section id="packages-and-libraries" class="level1 unlisted hidden">
 <h1 class="unlisted hidden">Packages and Libraries</h1>
@@ -1329,18 +1362,24 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>m.pm_overall<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> standardised_ppm_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.bias =</span> <span class="st">"Egger"</span>,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> standardised_ppm_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="forrest-plots" class="level2 tabset">
-<h2 class="tabset anchored" data-anchor-id="forrest-plots">Forrest Plots</h2>
+<section id="forrest-plots---style-options" class="level2 tabset">
+<h2 class="tabset anchored" data-anchor-id="forrest-plots---style-options">Forrest Plots - Style options</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">PM - Overall</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">NO2 - Overall</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Standard (PM - Overall, random &amp; mixed)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">JAMA (PM - Overall, random &amp; mixed)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">BMJ (PM - Overall, random &amp; mixed)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Cochrane’s Review Manager 5 (PM - Overall, random &amp; mixed)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">NO2 - Overall</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
@@ -1348,7 +1387,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">lefttabs =</span> <span class="fu">c</span>(<span class="st">"Author"</span>),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -1358,9 +1397,76 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </figure>
 </div>
 </div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>leftcols <span class="ot">=</span><span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"Exposure Period"</span>, <span class="st">"Sample Size"</span>, <span class="st">"I2"</span>, <span class="st">"Q"</span>, <span class="st">"pval.Q"</span>, <span class="st">"tau2"</span> )</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>leftlabs <span class="ot">=</span><span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"Exposure Period"</span>, <span class="st">"Sample Size"</span>, <span class="st">"I2"</span>, <span class="st">"Q"</span>, <span class="st">"P"</span>, <span class="st">"Tau2"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_overall,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">layout =</span> <span class="st">"JAMA"</span>,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"TE"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"g"</span>, <span class="st">"SE"</span>, <span class="st">"weight"</span>),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_overall,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">layout =</span> <span class="st">"BMJ"</span>,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"TE"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"g"</span>, <span class="st">"SE"</span>, <span class="st">"weight"</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_overall,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">layout =</span> <span class="st">"RevMan5"</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"TE"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"g"</span>, <span class="st">"SE"</span>, <span class="st">"weight"</span>),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in forest.meta(m.pm_overall, layout = "RevMan5", sortvar = TE,
+prediction = TRUE, : Information on between-study variance printed for RevMan5
+layout</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
 
 </div>
 </div>
