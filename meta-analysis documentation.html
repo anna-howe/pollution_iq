@@ -266,7 +266,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#overall-meta-analysis" id="toc-overall-meta-analysis" class="nav-link" data-scroll-target="#overall-meta-analysis">Overall Meta-analysis</a>
   <ul class="collapse">
-  <li><a href="#forrest-plots---style-options" id="toc-forrest-plots---style-options" class="nav-link" data-scroll-target="#forrest-plots---style-options">Forrest Plots - Style options</a></li>
+  <li><a href="#summarise-meta-output-for-pm" id="toc-summarise-meta-output-for-pm" class="nav-link" data-scroll-target="#summarise-meta-output-for-pm">Summarise meta output for PM</a></li>
+  <li><a href="#summarise-meta-output-for-no2" id="toc-summarise-meta-output-for-no2" class="nav-link" data-scroll-target="#summarise-meta-output-for-no2">Summarise meta output for No2</a></li>
+  <li><a href="#forest-plots" id="toc-forest-plots" class="nav-link" data-scroll-target="#forest-plots">Forest Plots</a></li>
   </ul></li>
   <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do</a></li>
   <li><a href="#useful-links" id="toc-useful-links" class="nav-link" data-scroll-target="#useful-links">Useful links</a></li>
@@ -326,7 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="fixed-effects-model" class="level2">
 <h2 class="anchored" data-anchor-id="fixed-effects-model">Fixed-effects model</h2>
 <p>Assumes that all effect sizes stem from a single, homogeneous population, i.e.&nbsp;all studies share the same true effect size. Thus any deviation from the overall effect size by any given study is because of sampling error. Hence why the effect is fixed. Can also be referred to as “equal effects” or “common effect”.</p>
-<p>Studeis with a small standard error, numerical representation of sampling error, should be better estimators of the true overall effect than studies with large standard errors. Pooled effects in mata-analyses give effect sizes with smaller standard errors (e.g.&nbsp;higer precision) a greater weight, inverse-variance weighting.</p>
+<p>Studies with a small standard error, numerical representation of sampling error, should be better estimators of the true overall effect than studies with large standard errors. Pooled effects in meta-analyses give effect sizes with smaller standard errors (e.g.&nbsp;higher precision) a greater weight, inverse-variance weighting.</p>
 </section>
 <section id="random-effects-model" class="level2">
 <h2 class="anchored" data-anchor-id="random-effects-model">Random-effects model</h2>
@@ -366,7 +368,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>“se”, use variance correction if HK standard error is smaller than standard error from classic random effects meta-analysis (Knapp and Hartung, 2003).</li>
 </ul></li>
-<li>method.tau.ci =
+<li>method.tau.ci = calculates a confidence interval for τ2 and τ
 <ul>
 <li>“J”, Jackson method recommended for DerSimonian-Laird estimator of τ2</li>
 </ul></li>
@@ -376,7 +378,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>data = data table to undertake analysis with</li>
 </ul>
-<p>method.tau = “DL”, method.random.ci = “HK”, method.predict = “HK”, method.tau.ci = “J”, #Jackson method recommended for DerSimonian-Laird #estimator of τ2 method.I2 = “Q”, method.bias = “Egger”,</p>
 </section>
 <section id="packages-and-libraries" class="level1 unlisted hidden">
 <h1 class="unlisted hidden">Packages and Libraries</h1>
@@ -1372,91 +1373,139 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
 <span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
 <span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.bias =</span> <span class="st">"Egger"</span>,</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> standardised_ppm_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> standardised_ppm_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="forrest-plots---style-options" class="level2 tabset">
-<h2 class="tabset anchored" data-anchor-id="forrest-plots---style-options">Forrest Plots - Style options</h2>
+<section id="summarise-meta-output-for-pm" class="level2">
+<h2 class="anchored" data-anchor-id="summarise-meta-output-for-pm">Summarise meta output for PM</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.pm_overall)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                        Effect Size              95%-CI %W(random)
+Chiu et al. (2016)          -6.5000 [-14.1000;  1.0000]        2.6
+Chiu et al. (2016)         -10.2000 [-27.8000;  7.4000]        0.6
+Harris et al. (2015)        -0.5300 [ -3.6800;  2.8900]        6.3
+Harris et al. (2015)         3.3300 [ -1.9000;  8.1000]        4.4
+Harris et al. (2015)         4.4000 [  0.0000;  8.8000]        5.0
+Holm et al. (2023)          -5.9700 [ -9.9300; -1.9300]        5.4
+Hsu et al. (2024)           -3.5000 [ -6.8000; -0.1000]        6.2
+Kusters et al. (2022)        1.5400 [ -4.4800;  7.5600]        3.5
+Kusters et al. (2022)        2.3600 [ -5.4800; 10.2000]        2.4
+Ni et al. (2022)             4.0000 [ -0.0500;  8.1000]        5.3
+Ni et al. (2022)            -2.4000 [ -6.3500;  1.5500]        5.5
+Ni et al. (2022)            -0.8500 [ -4.4000;  2.7000]        6.0
+Ni et al. (2022)             0.9000 [ -6.2500;  8.1000]        2.8
+Ni et al. (2022)            -4.0000 [-15.0000;  7.0500]        1.4
+Ni et al. (2022)           -10.9000 [-25.0000;  3.2000]        0.9
+Porta et al. (2016)         -1.9000 [ -7.9000;  4.1000]        3.5
+Sun et al. (2023)            2.6800 [ -5.4200;  0.0800]        7.0
+Sun et al. (2023)            0.3600 [ -1.0000;  1.7400]        8.8
+Sun et al. (2023)            0.3200 [ -1.6000;  0.9600]        8.9
+Wang et al. (2017)          -2.7400 [ -6.6300;  1.1500]        5.6
+Whitworth et al. (2024)      5.1200 [  3.0600;  7.1400]        8.0
+
+Number of studies: k = 21
+
+                          Effect Size            95%-CI    t p-value
+Random effects model (HK)      0.0124 [-1.5886; 1.6133] 0.02  0.9873
+Prediction interval                   [-5.0862; 5.1110]             
+
+Quantifying heterogeneity (with 95%-CIs):
+ tau^2 = 5.3853 [1.0515; 21.4916]; tau = 2.3206 [1.0254; 4.6359]
+ I^2 = 66.3% [46.7%; 78.7%]; H = 1.72 [1.37; 2.17]
+
+Test of heterogeneity:
+     Q d.f.  p-value
+ 59.32   20 &lt; 0.0001
+
+Details of meta-analysis methods:
+- Inverse variance method
+- DerSimonian-Laird estimator for tau^2
+- Jackson method for confidence interval of tau^2 and tau
+- Calculation of I^2 based on Q
+- Hartung-Knapp adjustment for random effects model (df = 20)
+- Hartung-Knapp prediction interval (df = 20)</code></pre>
+</div>
+</div>
+</section>
+<section id="run-meta-analysis-for-no2" class="level2 unlisted hidden">
+<h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-no2">Run meta-analysis for NO2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>standardised_no2_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"NO2"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> standardisation_factor <span class="sc">!=</span> <span class="st">"NA"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>m.no2_overall<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> standardised_no2_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="summarise-meta-output-for-no2" class="level2">
+<h2 class="anchored" data-anchor-id="summarise-meta-output-for-no2">Summarise meta output for No2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.no2_overall)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                      Effect Size            95%-CI %W(random)
+Kusters et al. (2022)      0.5300 [-0.2800; 1.3400]       25.2
+Kusters et al. (2022)      0.1300 [-0.5900; 0.8500]       26.9
+Ni et al. (2022)           1.8500 [-0.1500; 3.8500]        9.9
+Ni et al. (2022)           0.8000 [-1.2500; 2.8500]        9.6
+Ni et al. (2022)          -1.3500 [-3.3500; 0.6500]        9.9
+Porta et al. (2016)       -1.1000 [-2.3000; 0.1000]       18.5
+
+Number of studies: k = 6
+
+                          Effect Size            95%-CI    t p-value
+Random effects model (HK)      0.0910 [-0.9828; 1.1648] 0.22  0.8362
+Prediction interval                   [-1.8486; 2.0306]             
+
+Quantifying heterogeneity (with 95%-CIs):
+ tau^2 = 0.3948 [0.0000; 6.2997]; tau = 0.6283 [0.0000; 2.5099]
+ I^2 = 51.6% [0.0%; 80.7%]; H = 1.44 [1.00; 2.28]
+
+Test of heterogeneity:
+     Q d.f. p-value
+ 10.33    5  0.0665
+
+Details of meta-analysis methods:
+- Inverse variance method
+- DerSimonian-Laird estimator for tau^2
+- Jackson method for confidence interval of tau^2 and tau
+- Calculation of I^2 based on Q
+- Hartung-Knapp adjustment for random effects model (df = 5)
+- Hartung-Knapp prediction interval (df = 5)</code></pre>
+</div>
+</div>
+</section>
+<section id="forest-plots" class="level2 tabset">
+<h2 class="tabset anchored" data-anchor-id="forest-plots">Forest Plots</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Standard (PM - Overall, random &amp; mixed)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">JAMA (PM - Overall, random &amp; mixed)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">BMJ (PM - Overall, random &amp; mixed)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Cochrane’s Review Manager 5 (PM - Overall, random &amp; mixed)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">NO2 - Overall</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">PM - Overall, random-effects</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">NO2 - Overall, random-effects</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_overall,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>leftcols <span class="ot">=</span><span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"Exposure Period"</span>, <span class="st">"Sample Size"</span>, <span class="st">"I2"</span>, <span class="st">"Q"</span>, <span class="st">"pval.Q"</span>, <span class="st">"tau2"</span> )</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>leftlabs <span class="ot">=</span><span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"Exposure Period"</span>, <span class="st">"Sample Size"</span>, <span class="st">"I2"</span>, <span class="st">"Q"</span>, <span class="st">"P"</span>, <span class="st">"Tau2"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_overall,</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">layout =</span> <span class="st">"JAMA"</span>,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"TE"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"g"</span>, <span class="st">"SE"</span>, <span class="st">"weight"</span>),</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_overall,</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">layout =</span> <span class="st">"BMJ"</span>,</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"TE"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"g"</span>, <span class="st">"SE"</span>, <span class="st">"weight"</span>),</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_overall,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">layout =</span> <span class="st">"RevMan5"</span>,</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"TE"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"g"</span>, <span class="st">"SE"</span>, <span class="st">"weight"</span>),</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in forest.meta(m.pm_overall, layout = "RevMan5", sortvar = TE,
-prediction = TRUE, : Information on between-study variance printed for RevMan5
-layout</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_overall,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for PM2.5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1466,8 +1515,28 @@ layout</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
-
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.no2_overall,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for NO2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1479,7 +1548,9 @@ layout</code></pre>
 <li><p><label><input type="checkbox" checked="">Get data from MH</label></p></li>
 <li><p><label><input type="checkbox" checked="">Import data into R</label></p></li>
 <li><p><label><input type="checkbox" checked="">Standardised effect sizes &amp; associated CIs</label></p></li>
-<li><p>[]</p></li>
+<li><p><label><input type="checkbox" checked="">Run overall meta-analysis models</label></p></li>
+<li><p>[] Run meta-analysis models by exposure time</p></li>
+<li><p>[] Include risk of bias and sample size for each study?</p></li>
 </ul>
 </section>
 <section id="useful-links" class="level1">

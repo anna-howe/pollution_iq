@@ -26,7 +26,7 @@ This page is designed to provide detail on the meta-analysis undertaken for the 
 
 Assumes that all effect sizes stem from a single, homogeneous population, i.e. all studies share the same true effect size. Thus any deviation from the overall effect size by any given study is because of sampling error. Hence why the effect is fixed. Can also be referred to as "equal effects" or "common effect".
 
-Studeis with a small standard error, numerical representation of sampling error, should be better estimators of the true overall effect than studies with large standard errors. Pooled effects in mata-analyses give effect sizes with smaller standard errors (e.g. higer precision) a greater weight, inverse-variance weighting.
+Studies with a small standard error, numerical representation of sampling error, should be better estimators of the true overall effect than studies with large standard errors. Pooled effects in meta-analyses give effect sizes with smaller standard errors (e.g. higher precision) a greater weight, inverse-variance weighting.
 
 ## Random-effects model
 
@@ -74,20 +74,11 @@ with very homogeneous treatment estimates, the Hartung-Knapp variance estimate c
 arbitrarily small resulting in a very narrow confidence interval (Knapp and Hartung, 2003; Wiksten et al., 2016). An ad hoc variance correction has been proposed by utilising the variance estimate from the classic random effects model with the Hartung-Knapp method.as
   - "se", use variance correction if HK standard error is smaller than standard error from
   classic random effects meta-analysis (Knapp and Hartung, 2003).
-- method.tau.ci = 
+- method.tau.ci = calculates a confidence interval for τ2 and τ
   - "J", Jackson method recommended for DerSimonian-Laird estimator of τ2
-
 - method.I2 = method to estimate the I-squared statistic
   - "Q", based on heterogeneity statistic Q
 - data = data table to undertake analysis with
-
-method.tau = "DL",
-               method.random.ci = "HK",
-               method.predict = "HK",
-               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
-                                    #estimator of τ2
-               method.I2 = "Q",
-               method.bias = "Egger",
 
 # Packages and Libraries {.unlisted .hidden}
 
@@ -206,70 +197,73 @@ m.pm_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower
                method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
                                     #estimator of τ2
                method.I2 = "Q",
-               method.bias = "Egger",
                data = standardised_ppm_data))
 
 ```
-## Forrest Plots - Style options {.tabset}
+## Summarise meta output for PM
+```{r}
+summary(m.pm_overall)
+```
+## Run meta-analysis for NO2 {.unlisted .hidden}
+```{r}
+standardised_no2_data <- standardised_review_data |>
+  filter(exposure == "NO2" & exposure_level != "NA" & standardisation_factor != "NA")
+
+m.no2_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+               upper=standardised_ci_upper,
+               studlab = study,
+               #prediction = exposure_level,
+               sm = "Effect Size",
+               common = FALSE,
+               random = TRUE,
+               method.tau = "DL",
+               method.random.ci = "HK",
+               method.predict = "HK",
+               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
+                                    #estimator of τ2
+               method.I2 = "Q",
+               data = standardised_no2_data))
+
+```
+## Summarise meta output for No2
+```{r}
+summary(m.no2_overall)
+```
+
+
+## Forest Plots {.tabset}
 :::{.panel-tabset}
-# Standard (PM - Overall, random & mixed)
+# PM - Overall, random-effects
 ```{r}
     forest(m.pm_overall,
        sortvar = TE,
        prediction = TRUE,
        print.tau2 = FALSE,
+       print.I2 = TRUE,
+       print.I2.ci = TRUE,
        leftcols = c("studlab", "statistic", "pval", "seTE", "w.random"),
+       leftlabs = c("Study", "I2", "P", "SE", "Weight"),
+       rightcols = c("effect.ci"),
        fontsize = 6,
-       spacing = 0.5)
-
-leftcols =c("studlab", "Exposure Period", "Sample Size", "I2", "Q", "pval.Q", "tau2" )
-leftlabs =c("Study", "Exposure Period", "Sample Size", "I2", "Q", "P", "Tau2" )
-
+       spacing = 0.5,
+       title = "Forest Plot for PM2.5")
 ```
-# JAMA (PM - Overall, random & mixed)
+# NO2 - Overall, random-effects
 ```{r}
-    forest(m.pm_overall,
-       layout = "JAMA",
+    forest(m.no2_overall,
        sortvar = TE,
        prediction = TRUE,
        print.tau2 = FALSE,
-       leftcols = c("studlab", "TE", "seTE", "w.random"),
-       leftlabs = c("Study", "g", "SE", "weight"),
+       print.I2 = TRUE,
+       print.I2.ci = TRUE,
+       leftcols = c("studlab", "statistic", "pval", "seTE", "w.random"),
+       leftlabs = c("Study", "I2", "P", "SE", "Weight"),
+       rightcols = c("effect.ci"),
        fontsize = 6,
-       spacing = 0.5)
-
+       spacing = 0.5,
+       title = "Forest Plot for NO2")
 ```
 
-# BMJ (PM - Overall, random & mixed)
-```{r}
-    forest(m.pm_overall,
-       layout = "BMJ",
-       sortvar = TE,
-       prediction = TRUE,
-       print.tau2 = FALSE,
-       leftcols = c("studlab", "TE", "seTE", "w.random"),
-       leftlabs = c("Study", "g", "SE", "weight"),
-       fontsize = 6,
-       spacing = 0.5)
-
-```
-
-
-# Cochrane’s Review Manager 5 (PM - Overall, random & mixed)
-```{r}
-    forest(m.pm_overall,
-       layout = "RevMan5",
-       sortvar = TE,
-       prediction = TRUE,
-       print.tau2 = FALSE,
-       leftcols = c("studlab", "TE", "seTE", "w.random"),
-       leftlabs = c("Study", "g", "SE", "weight"),
-       fontsize = 6,
-       spacing = 0.5)
-
-```
-
-# NO2 - Overall
 
 :::
 
@@ -283,7 +277,11 @@ leftlabs =c("Study", "Exposure Period", "Sample Size", "I2", "Q", "P", "Tau2" )
 
 -   [x] Standardised effect sizes & associated CIs
 
--   \[\]
+-   [x] Run overall meta-analysis models
+
+-   [] Run meta-analysis models by exposure time
+
+-   [] Include risk of bias and sample size for each study?
 
 # Useful links
 
