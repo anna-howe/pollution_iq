@@ -131,11 +131,11 @@ knitr::kable(standardised_review_data)
 
 ## Run meta-analysis for PM {.unlisted .hidden}
 ```{r}
-standardised_ppm_data <- standardised_review_data |>
+pm_total_pre_preg_data <- standardised_review_data |>
   filter(exposure == "PM2.5" & exposure_level != "NA" & sample == "Total" & exposure_period == "pre-natal" 
          & (exposure_time == "Pregnancy" | exposure_time == "Averaged over entire pregnancy") & reference != 3)
 
-m.pm_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+m.pm_total_pre_preg=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
                upper=standardised_ci_upper,
                studlab = study,
                #prediction = exposure_level,
@@ -148,12 +148,34 @@ m.pm_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower
                method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
                                     #estimator of τ2
                method.I2 = "Q",
-               data = standardised_ppm_data))
+               data = pm_total_pre_preg_data))
+
+pm_total_pre_tri_data <- standardised_review_data |>
+  filter(exposure == "PM2.5" & exposure_level != "NA" & sample == "Total" & exposure_period == "pre-natal" 
+         & (exposure_time == "1st trimester" | exposure_time == "2nd trimester" | exposure_time == "3rd trimester") & reference != 3)
+
+m.pm_total_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+               upper=standardised_ci_upper,
+               studlab = study,
+               subgroup = exposure_time,
+               #prediction = exposure_level,
+               sm = "Effect Size",
+               common = FALSE,
+               random = TRUE,
+               method.tau = "DL",
+               method.random.ci = "HK",
+               method.predict = "HK",
+               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
+                                    #estimator of τ2
+               method.I2 = "Q",
+               data = pm_total_pre_tri_data))
+
 
 ```
-## Summarise meta output for PM
+## Summarise meta output for PM2.5
 ```{r}
-summary(m.pm_overall)
+summary(m.pm_total_pre_preg)
+summary (m.pm_total_pre_tri)
 ```
 ## Run meta-analysis for NO2 {.unlisted .hidden}
 ```{r}
@@ -178,15 +200,15 @@ m.no2_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lowe
 ```
 ## Summarise meta output for No2
 ```{r}
-summary(m.no2_overall)
+summary(m.pm_total_pre_preg)
 ```
 
 
-## Forest Plots {.tabset}
+## PM2.5 Forest Plots - total sample {.tabset}
 :::{.panel-tabset}
-# PM - Overall, random-effects
+# Pre-natal exposure (entire pregnancy)
 ```{r}
-    forest(m.pm_overall,
+    forest(m.pm_total_pre_preg,
        sortvar = TE,
        prediction = TRUE,
        print.tau2 = FALSE,
@@ -199,6 +221,27 @@ summary(m.no2_overall)
        spacing = 0.5,
        title = "Forest Plot for pre-natal PM2.5 exposure, for the total sample as a measure of the entire pregnancy")
 ```
+
+# Pre-natal exposure by trimester
+```{r}
+    forest(m.pm_total_pre_tri,
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       print.I2 = TRUE,
+       print.I2.ci = TRUE,
+       leftcols = c("studlab", "statistic", "pval", "seTE", "w.random"),
+       leftlabs = c("Study", "I2", "P", "SE", "Weight"),
+       rightcols = c("effect.ci"),
+       fontsize = 6,
+       spacing = 0.5,
+       title = "Forest Plot for pre-natal PM2.5 exposure, for the total sample by pregnancy trimester")
+```
+:::
+
+## NO2 Forest Plots {.tabset}
+:::{.panel-tabset}
+
 # NO2 - Overall, random-effects
 ```{r}
     forest(m.no2_overall,
