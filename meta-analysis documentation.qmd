@@ -107,11 +107,6 @@ path = "C:\\Users\\aho135\\OneDrive - University of Canterbury\\Research\\air qu
 range = "data!B1:U139")
 
 ```
-## Imported Data
-```{r}
-knitr::kable(review_data)
-```
-
 
 ## Create standardised data {.unlisted .hidden}
 ```{r}
@@ -137,7 +132,8 @@ knitr::kable(standardised_review_data)
 ## Run meta-analysis for PM {.unlisted .hidden}
 ```{r}
 standardised_ppm_data <- standardised_review_data |>
-  filter(exposure == "PM2.5" & exposure_level != "NA")
+  filter(exposure == "PM2.5" & exposure_level != "NA" & sample == "Total" & exposure_period == "pre-natal" 
+         & (exposure_time == "Pregnancy" | exposure_time == "Averaged over entire pregnancy") & reference != 3)
 
 m.pm_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
                upper=standardised_ci_upper,
@@ -162,7 +158,7 @@ summary(m.pm_overall)
 ## Run meta-analysis for NO2 {.unlisted .hidden}
 ```{r}
 standardised_no2_data <- standardised_review_data |>
-  filter(exposure == "NO2" & exposure_standard_ugm3 != "NA")
+  filter(exposure == "NO2" & exposure_standard_ugm3 != "NA" & sample == "Total")
 
 m.no2_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
                upper=standardised_ci_upper,
@@ -201,7 +197,7 @@ summary(m.no2_overall)
        rightcols = c("effect.ci"),
        fontsize = 6,
        spacing = 0.5,
-       title = "Forest Plot for PM2.5")
+       title = "Forest Plot for pre-natal PM2.5 exposure, for the total sample as a measure of the entire pregnancy")
 ```
 # NO2 - Overall, random-effects
 ```{r}
