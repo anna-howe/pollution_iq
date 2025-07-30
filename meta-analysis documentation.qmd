@@ -88,7 +88,8 @@ arbitrarily small resulting in a very narrow confidence interval (Knapp and Hart
 
 if (!require("pacman")) install.packages("pacman"); library(pacman)
 
-pacman::p_load(quarto, knitr, tidyverse, dplyr, reshape2, ggplot2, meta, metasens) # Install & load packages
+pacman::p_load(quarto, knitr, tidyverse, dplyr, reshape2, readxl, ggplot2, meta, metasens) 
+# Install & load packages
 ```
 
 # Data Wrangling
@@ -96,83 +97,14 @@ pacman::p_load(quarto, knitr, tidyverse, dplyr, reshape2, ggplot2, meta, metasen
 Chiu et al - sex differences reported with SE and converted to confidence intervals with formula
 $\mathrm{CI_h=\bar{x}+SE⋅1.95996}$
 
-
+Ni et al - ppb for NO2 converted to ug/m3 using an online converter
+(https://www.wkcgroup.com/tools-room/micrograms-per-cubic-meter-parts-per-billion-converter/)
 
 ## Create data table {.unlisted .hidden}
 ```{r}
-review_data <- tibble(
-  study = c("Chiu et al. (2016)", "Chiu et al. (2016)", "Guilbert et al. (2023)", "Harris et al. (2015)", 
-            "Harris et al. (2015)", "Harris et al. (2015)", "Holm et al. (2023)", "Hsu et al. (2024)", 
-            "Kusters et al. (2022)", "Kusters et al. (2022)", "Ni et al. (2022)", "Ni et al. (2022)", 
-            "Ni et al. (2022)", "Ni et al. (2022)", "Ni et al. (2022)", "Ni et al. (2022)", "Porta et al. (2016)",
-            "Sun et al. (2023)", "Sun et al. (2023)", "Sun et al. (2023)", "Tokuda et al. (2023)", 
-            "Tokuda et al. (2023)", "Tokuda et al. (2023)", "Tokuda et al. (2023)",
-            "Wang et al. (2017)", "Whitworth et al. (2024)", "Freire et al. (2010)",
-            "Freire et al. (2010)", "Guilbert et al. (2023)", "Kusters et al. (2022)",
-            "Kusters et al. (2022)", "Ni et al. (2022)", "Ni et al. (2022)", 
-            "Ni et al. (2022)", "Porta et al. (2016)"),
-  n_overall = c(267, 267, 1271, 1109, 1109, 1109, 586, 553, 4683, 4683, 1810, 1810, 1810, 1810, 1810, 1810, 465, 512,
-                512, 512, 195, 195, 195, 195, 1360, 1303, 210, 210, 1271, 4683, 4683, 1810, 1810, 1810, 465),
-  quality_assessment = c("Strong","Strong","Strong", "Moderate", "Moderate", "Moderate", "Strong",
-                         "Moderate", "Moderate", "Moderate", "Strong", "Strong", "Strong", "Strong", "Strong",
-                         "Strong", "Moderate", "Moderate", "Moderate","Moderate", "Strong", "Strong", "Strong",
-                         "Strong", "Strong", "Moderate", "Strong", "Strong", "Strong", "Moderate", "Moderate",
-                         "Strong", "Strong", "Strong", "Moderate"),
-  location = c("United States", "United States", "France", "United States", "United States", "United States",
-               "United States", "Mexico", "Netherlands", "Netherlands", "United States", "United States", 
-               "United States", "United States", "United States", "United States", "Italy", "China", "China", 
-               "China", "Japan", "Japan", "Japan", "Japan", "United States", "Spain", "Spain", "Spain", "France",
-               "Netherlands", "Netherlands", "United States", "United States", "United States", "Italy"),
-  n_exposure = c(267, 267, 1271, 1109, 1109, 1109, 586, 553, 4683, 4683, 1347, 1347, 1339, 1347, 1334, 1262, 465, 512,
-                512, 512, 195, 195, 195, 195, 1360, 1303, 210, 210, 1271, 4683, 4683, 1810, 1810, 1810, 465),
-  exposure_window = c("Averaged across sensitive window", "Averaged over entire pregnancy", 
-                      "Comparable data not available", "3rd trimester", "Birth‒age 6", 
-                      "Year before cognitive testing", "Pregnancy", "Pregnancy",
-                      "Pregnancy", "Childhood", "1st trimester", "2nd trimester", 
-                      "3rd trimester", "Pregnancy", "0–2 years", "2–4 years", "Pregnancy",
-                      "1st trimester", "2nd trimester", "3rd trimester", "Pregnancy", 
-                      "0–1 year", "1–3 years", "3–5 years", "Age 9–11 years", 
-                      "Age 3.5–4.1 years", "Childhood", "Childhood", 
-                      "Comparable data not available", "Pregnancy", "Childhood", 
-                      "1st trimester", "2nd trimester", "3rd trimester", "Pregnancy"),
-  period = c("NA", "pre-natal", "NA", "pre-natal", "post-natal", "post-natal", "pre-natal", "pre-natal",
-             "pre-natal", "post-natal", "pre-natal", "pre-natal", "pre-natal", "pre-natal", "post-natal",
-             "post-natal", "pre-natal", "pre-natal", "pre-natal", "pre-natal", "pre-natal", "post-natal",
-             "post-natal", "post-natal", "post-natal", "post-natal", "post-natal", "post-natal", "NA", 
-             "pre-natal", "post-natal", "pre-natal", "pre-natal", "pre-natal", "pre-natal"),
-  exposure_level = c("Change in full-scale IQ per unit increase", 
-                     "Change in full-scale IQ per unit increase", "NA", 
-                     "per 3.8 μg/m3 increase", "per 2.1 μg/m3 increase", 
-                     "per 2.5 μg/m3 increase", "per 3 μg/m3 increase", 
-                     "per 1 μg/m3 increase", "per 5 μg/m3 increase", "per 5 μg/m3 increase",
-                     "per 2 μg/m3 increase", "per 2 μg/m3 increase", "per 2 μg/m3 increase",
-                     "per 2 μg/m3 increase", "per 2 μg/m3 increase", "per 2 μg/m3 increase",
-                     "per 10 μg/m3 increase", "per 5 μg/m3 increase", 
-                     "per 5 μg/m3 increase", "per 5 μg/m3 increase", "NA", "NA", "NA", "NA",
-                     "per 7.3 μg/m3 increase", "per 5 μg/m3 increase", "15.40-24.75",
-                     ">24.75", "NA", "per 10μg/m3 increase", "per 10μg/m3 increase", 
-                     "per 2 ppb NO2", "per 2 ppb NO2", "per 2 ppb NO2", 
-                     "per 10 μg/m3 increase"),
-  standardisation_factor = c(1, 1, NA, 3.8, 2.1, 2.5, 3, 1, 5, 5, 2, 2, 2, 2, 2, 2, 10,
-                             5, 5, 5, NA, NA, NA, NA, 7.3, 5, NA, NA, NA, 10, 10, 2, 2, 2,
-                             10),
-  exposure = c("PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5",
-              "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5",
-              "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5", "PM2.5",
-              "PM2.5", "PM2.5", "NO2", "NO2", "NO2", "NO2", "NO2", "NO2", "NO2", "NO2",
-              "NO2"),
-  effect_size = c(-0.65, -1.02, NA, -0.20, 0.70, 1.10, -1.79, -0.35, 0.77, 1.18, 0.89,
-                  -0.48, -0.17, 0.18, -0.80, -2.18, -1.90, 1.34, 0.18, 0.16, 0.66, 1.00,
-                  1.02, 0.79, -2.00, 2.56, -1.07, -4.19, NA, 0.53, 0.13, 0.37, 0.16, -0.27,
-                  -1.10),
-  ci_lower= c(-1.41, -2.78, NA, -1.40, -0.40, 0.00, -2.98, -0.68, -2.24, -2.74, 0.05,
-              -1.27, -0.88, -1.25, -3.00, -5.00, -7.90, -2.71, -0.50, -0.80, 0.30, 0.54,
-              0.61, 0.44, -4.84, 1.53, -9.99, -14.02, NA, -0.28, -0.59, -0.03, -0.25, -0.67,
-              -2.30),
-  ci_upper = c(0.10, 0.74, NA, 1.10, 1.70, 2.20, -0.58, -0.01, 3.78, 5.10, 1.73, 0.31, 0.54,
-               1.62, 1.41, 0.64, 4.10, 0.04, 0.87, 0.48, 1.45, 1.82, 1.72, 1.43, 0.84, 3.57,
-               7.85, 5.64, NA, 1.34, 0.85, 0.77, 0.57, 0.13, 0.10)
-)
+review_data <- read_xlsx (
+path = "C:\\Users\\aho135\\OneDrive - University of Canterbury\\Research\\air quality and IQ metaanalysis data.xlsx",
+range = "data!B1:U139")
 
 ```
 ## Imported Data
@@ -186,9 +118,9 @@ knitr::kable(review_data)
 
 standardised_review_data <- 
   mutate(review_data,
-         standardised_effect_size = effect_size * (10/standardisation_factor),
-         standardised_ci_lower = ci_lower * (10/standardisation_factor),
-         standardised_ci_upper = ci_upper * (10/standardisation_factor)) 
+         standardised_effect_size = orig_effect_size * (10/exposure_standard_ugm3),
+         standardised_ci_lower = orig_ci_lower * (10/exposure_standard_ugm3),
+         standardised_ci_upper = orig_ci_upper * (10/exposure_standard_ugm3)) 
 
 standardised_review_data <- standardised_review_data |>
   mutate(across(c('standardised_effect_size','standardised_ci_lower',
@@ -230,7 +162,7 @@ summary(m.pm_overall)
 ## Run meta-analysis for NO2 {.unlisted .hidden}
 ```{r}
 standardised_no2_data <- standardised_review_data |>
-  filter(exposure == "NO2" & exposure_level != "NA" & standardisation_factor != "NA")
+  filter(exposure == "NO2" & exposure_standard_ugm3 != "NA")
 
 m.no2_overall=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
                upper=standardised_ci_upper,
@@ -303,7 +235,15 @@ summary(m.no2_overall)
         
 -   [] Wang et al 2017
         -   updated IQR range of exposure from 7.3 to 7.73.
-        -   have you excluded the supplementary data on NOx (nitrogen oxides) because it's broader than NO2?
+
+-   [] Loftus et al 2019 "Prenatal air pollution and childhood ID: Preliminary evidence of effect modification by folate"
+        - some how I ended up with this paper printed out but can't find it in your list of included or excluded papers?
+        
+-   [] Have extracted extra data from the figures using Web Plot Digitizer (https://apps.automeris.io/wpd4/)
+        - include or exclude these data?
+        
+-   [] Have converted some standard error data to 95% CI and PPB to ug/m3
+        - include or exclude these data?
 
 # To do
 
