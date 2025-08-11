@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Anna Howe">
-<meta name="dcterms.date" content="2025-07-30">
+<meta name="dcterms.date" content="2025-08-11">
 
 <title>Meta-analysis: Pollution and IQ</title>
 <style>
@@ -294,9 +294,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#overall-meta-analysis" id="toc-overall-meta-analysis" class="nav-link" data-scroll-target="#overall-meta-analysis">Overall Meta-analysis</a>
   <ul class="collapse">
-  <li><a href="#summarise-meta-output-for-pm2.5" id="toc-summarise-meta-output-for-pm2.5" class="nav-link" data-scroll-target="#summarise-meta-output-for-pm2.5">Summarise meta output for PM2.5</a></li>
-  <li><a href="#summarise-meta-output-for-no2" id="toc-summarise-meta-output-for-no2" class="nav-link" data-scroll-target="#summarise-meta-output-for-no2">Summarise meta output for No2</a></li>
-  <li><a href="#pm2.5-forest-plots---total-sample" id="toc-pm2.5-forest-plots---total-sample" class="nav-link" data-scroll-target="#pm2.5-forest-plots---total-sample">PM2.5 Forest Plots - total sample</a></li>
+  <li><a href="#pm2.5-forest-plots---pre-natal-exposure" id="toc-pm2.5-forest-plots---pre-natal-exposure" class="nav-link" data-scroll-target="#pm2.5-forest-plots---pre-natal-exposure">PM2.5 Forest Plots - Pre-natal exposure</a></li>
   <li><a href="#no2-forest-plots" id="toc-no2-forest-plots" class="nav-link" data-scroll-target="#no2-forest-plots">NO2 Forest Plots</a></li>
   </ul></li>
   <li><a href="#questions-for-matt" id="toc-questions-for-matt" class="nav-link" data-scroll-target="#questions-for-matt">Questions for Matt</a></li>
@@ -334,14 +332,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 30, 2025</p>
+      <p class="date">August 11, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">July 30, 2025</p>
+      <p class="date-modified">August 11, 2025</p>
     </div>
   </div>
     
@@ -421,7 +419,7 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>review_data <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span> (</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">path =</span> <span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">aho135</span><span class="sc">\\</span><span class="st">OneDrive - University of Canterbury</span><span class="sc">\\</span><span class="st">Research</span><span class="sc">\\</span><span class="st">air quality and IQ metaanalysis data.xlsx"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">range =</span> <span class="st">"data!B1:U139"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">range =</span> <span class="st">"data!B1:U142"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-standardised-data" class="level2 unlisted hidden">
@@ -1241,7 +1239,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
-<td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">KBIT-2 verbal</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">no</td>
@@ -1390,7 +1388,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Hsu et al.&nbsp;(2024)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Pregnancy&nbsp;</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">no</td>
@@ -1415,7 +1413,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Kusters et al.&nbsp; (2022)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Pregnancy&nbsp;</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-V</td>
 <td style="text-align: left;">yes</td>
@@ -1440,7 +1438,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Kusters et al.&nbsp; (2022)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Childhood&nbsp;</td>
+<td style="text-align: left;">Childhood</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-V</td>
 <td style="text-align: left;">yes</td>
@@ -1540,7 +1538,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Pregnancy&nbsp;</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">mixed</td>
@@ -1690,7 +1688,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Boys</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Pregnancy&nbsp;</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">mixed</td>
@@ -1840,7 +1838,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Girls</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Pregnancy&nbsp;</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">mixed</td>
@@ -2165,7 +2163,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Tokuda et al.&nbsp; (2023)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Pregnancy&nbsp;</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">yes</td>
@@ -2340,7 +2338,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Tokuda et al.&nbsp; (2023)</td>
 <td style="text-align: left;">Boys</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Pregnancy&nbsp;</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">yes</td>
@@ -2515,7 +2513,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Tokuda et al.&nbsp; (2023)</td>
 <td style="text-align: left;">Girls</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Pregnancy&nbsp;</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">yes</td>
@@ -3565,7 +3563,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">NO2</td>
-<td style="text-align: left;">Prenatal</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">mixed</td>
@@ -3615,7 +3613,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">NO2</td>
-<td style="text-align: left;">2-4 years</td>
+<td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">mixed</td>
@@ -3715,7 +3713,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Boys</td>
 <td style="text-align: left;">NO2</td>
-<td style="text-align: left;">Prenatal</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">mixed</td>
@@ -3765,7 +3763,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Boys</td>
 <td style="text-align: left;">NO2</td>
-<td style="text-align: left;">2-4 years</td>
+<td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">mixed</td>
@@ -3865,7 +3863,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Girls</td>
 <td style="text-align: left;">NO2</td>
-<td style="text-align: left;">Prenatal</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">mixed</td>
@@ -3915,7 +3913,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Ni et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Girls</td>
 <td style="text-align: left;">NO2</td>
-<td style="text-align: left;">2-4 years</td>
+<td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">mixed</td>
@@ -3940,7 +3938,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Porta et al.&nbsp;(2016)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">NO2</td>
-<td style="text-align: left;">Pregnancy&nbsp;</td>
+<td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-III</td>
 <td style="text-align: left;">yes</td>
@@ -3960,6 +3958,81 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: right;">-2.30</td>
 <td style="text-align: right;">0.10</td>
 </tr>
+<tr class="odd">
+<td style="text-align: right;">99</td>
+<td style="text-align: left;">Loftus et al.&nbsp;(2019)</td>
+<td style="text-align: left;">Total</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">SB-5</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">4-6 years</td>
+<td style="text-align: left;">early</td>
+<td style="text-align: left;">Linear regression model</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: right;">924</td>
+<td style="text-align: right;">1.14</td>
+<td style="text-align: right;">-0.960000</td>
+<td style="text-align: right;">3.2400000</td>
+<td style="text-align: left;">per 5 ppb NO2</td>
+<td style="text-align: left;">parts per billion</td>
+<td style="text-align: right;">9.73</td>
+<td style="text-align: right;">1.17</td>
+<td style="text-align: right;">-0.99</td>
+<td style="text-align: right;">3.33</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">99</td>
+<td style="text-align: left;">Loftus et al.&nbsp;(2019)</td>
+<td style="text-align: left;">Boys</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">SB-5</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">4-6 years</td>
+<td style="text-align: left;">early</td>
+<td style="text-align: left;">Linear regression model</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">1.80</td>
+<td style="text-align: right;">-1.460000</td>
+<td style="text-align: right;">5.0000000</td>
+<td style="text-align: left;">per 5 ppb NO2</td>
+<td style="text-align: left;">parts per billion</td>
+<td style="text-align: right;">9.73</td>
+<td style="text-align: right;">1.85</td>
+<td style="text-align: right;">-1.50</td>
+<td style="text-align: right;">5.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">99</td>
+<td style="text-align: left;">Loftus et al.&nbsp;(2019)</td>
+<td style="text-align: left;">Girls</td>
+<td style="text-align: left;">NO2</td>
+<td style="text-align: left;">Pregnancy</td>
+<td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">SB-5</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: left;">4-6 years</td>
+<td style="text-align: left;">early</td>
+<td style="text-align: left;">Linear regression model</td>
+<td style="text-align: left;">no</td>
+<td style="text-align: right;">NA</td>
+<td style="text-align: right;">1.02</td>
+<td style="text-align: right;">-1.520000</td>
+<td style="text-align: right;">3.6300000</td>
+<td style="text-align: left;">per 5 ppb NO2</td>
+<td style="text-align: left;">parts per billion</td>
+<td style="text-align: right;">9.73</td>
+<td style="text-align: right;">1.05</td>
+<td style="text-align: right;">-1.56</td>
+<td style="text-align: right;">3.73</td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -3971,193 +4044,353 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <section id="run-meta-analysis-for-pm" class="level2 unlisted hidden">
 <h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-pm">Run meta-analysis for PM</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pm_total_pre_preg_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">==</span> <span class="st">"Total"</span> <span class="sc">&amp;</span> exposure_period <span class="sc">==</span> <span class="st">"pre-natal"</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="sc">&amp;</span> (exposure_time <span class="sc">==</span> <span class="st">"Pregnancy"</span> <span class="sc">|</span> exposure_time <span class="sc">==</span> <span class="st">"Averaged over entire pregnancy"</span>) <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>m.pm_total_pre_preg<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_pre_preg_data))</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>pm_total_pre_tri_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">==</span> <span class="st">"Total"</span> <span class="sc">&amp;</span> exposure_period <span class="sc">==</span> <span class="st">"pre-natal"</span> </span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>         <span class="sc">&amp;</span> (exposure_time <span class="sc">==</span> <span class="st">"1st trimester"</span> <span class="sc">|</span> exposure_time <span class="sc">==</span> <span class="st">"2nd trimester"</span> <span class="sc">|</span> exposure_time <span class="sc">==</span> <span class="st">"3rd trimester"</span>) <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure (entire pregnancy)</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>pm_total_pre_preg_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">==</span> <span class="st">"Total"</span> <span class="sc">&amp;</span> exposure_period <span class="sc">==</span> <span class="st">"pre-natal"</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>         <span class="sc">&amp;</span> (exposure_time <span class="sc">==</span> <span class="st">"Pregnancy"</span> <span class="sc">|</span> exposure_time <span class="sc">==</span> <span class="st">"Averaged over entire pregnancy"</span>) <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)  </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>m.pm_total_pre_preg<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_pre_preg_data))</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure, by sex (entire pregnancy)</span></span>
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>m.pm_total_pre_tri<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> exposure_time,</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
-<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_pre_tri_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>pm_sex_pre_preg_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">!=</span> <span class="st">"Total"</span> <span class="sc">&amp;</span> exposure_period <span class="sc">==</span> <span class="st">"pre-natal"</span> </span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>         <span class="sc">&amp;</span> (exposure_time <span class="sc">==</span> <span class="st">"Pregnancy"</span> <span class="sc">|</span> exposure_time <span class="sc">==</span> <span class="st">"Averaged over entire pregnancy"</span>) <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)  </span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>m.pm_sex_pre_preg<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> sample,</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_sex_pre_preg_data))</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure, by iq test (entire pregnancy)</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>m.pm_iq_pre_preg<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> iq_wechsler,</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_pre_preg_data))</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure, by statistical model (entire pregnancy)</span></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>m.pm_model_pre_preg<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> model_distributed,</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_pre_preg_data))</span>
+<span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure, by age tested (entire pregnancy)</span></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>m.pm_age_pre_preg<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> age_period_tested,</span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_pre_preg_data))</span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure by trimester</span></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>pm_total_pre_tri_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">==</span> <span class="st">"Total"</span> <span class="sc">&amp;</span> exposure_period <span class="sc">==</span> <span class="st">"pre-natal"</span> </span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>         <span class="sc">&amp;</span> (exposure_time <span class="sc">==</span> <span class="st">"1st trimester"</span> <span class="sc">|</span> exposure_time <span class="sc">==</span> <span class="st">"2nd trimester"</span> <span class="sc">|</span> exposure_time <span class="sc">==</span> <span class="st">"3rd trimester"</span>) <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)</span>
+<span id="cb5-107"><a href="#cb5-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-108"><a href="#cb5-108" aria-hidden="true" tabindex="-1"></a>m.pm_total_pre_tri<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb5-109"><a href="#cb5-109" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb5-110"><a href="#cb5-110" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb5-111"><a href="#cb5-111" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> exposure_time,</span>
+<span id="cb5-112"><a href="#cb5-112" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb5-113"><a href="#cb5-113" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb5-114"><a href="#cb5-114" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-115"><a href="#cb5-115" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-116"><a href="#cb5-116" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb5-117"><a href="#cb5-117" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-118"><a href="#cb5-118" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-119"><a href="#cb5-119" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb5-120"><a href="#cb5-120" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb5-121"><a href="#cb5-121" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb5-122"><a href="#cb5-122" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_pre_tri_data))</span>
+<span id="cb5-123"><a href="#cb5-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-124"><a href="#cb5-124" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure by trimester for boys</span></span>
+<span id="cb5-125"><a href="#cb5-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-126"><a href="#cb5-126" aria-hidden="true" tabindex="-1"></a>pm_boys_pre_tri_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb5-127"><a href="#cb5-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">==</span> <span class="st">"Boys"</span> <span class="sc">&amp;</span> </span>
+<span id="cb5-128"><a href="#cb5-128" aria-hidden="true" tabindex="-1"></a>           exposure_period <span class="sc">==</span> <span class="st">"pre-natal"</span> <span class="sc">&amp;</span> (exposure_time <span class="sc">==</span> <span class="st">"1st trimester"</span> <span class="sc">|</span></span>
+<span id="cb5-129"><a href="#cb5-129" aria-hidden="true" tabindex="-1"></a>          exposure_time <span class="sc">==</span> <span class="st">"2nd trimester"</span> <span class="sc">|</span> exposure_time <span class="sc">==</span> <span class="st">"3rd trimester"</span>) </span>
+<span id="cb5-130"><a href="#cb5-130" aria-hidden="true" tabindex="-1"></a>         <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)</span>
+<span id="cb5-131"><a href="#cb5-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-132"><a href="#cb5-132" aria-hidden="true" tabindex="-1"></a>m.pm_boys_pre_tri<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb5-133"><a href="#cb5-133" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb5-134"><a href="#cb5-134" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb5-135"><a href="#cb5-135" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> exposure_time,</span>
+<span id="cb5-136"><a href="#cb5-136" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb5-137"><a href="#cb5-137" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb5-138"><a href="#cb5-138" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-139"><a href="#cb5-139" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-140"><a href="#cb5-140" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb5-141"><a href="#cb5-141" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-142"><a href="#cb5-142" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-143"><a href="#cb5-143" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb5-144"><a href="#cb5-144" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb5-145"><a href="#cb5-145" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb5-146"><a href="#cb5-146" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_boys_pre_tri_data))</span>
+<span id="cb5-147"><a href="#cb5-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-148"><a href="#cb5-148" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure by trimester for girls</span></span>
+<span id="cb5-149"><a href="#cb5-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-150"><a href="#cb5-150" aria-hidden="true" tabindex="-1"></a>pm_girls_pre_tri_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb5-151"><a href="#cb5-151" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">==</span> <span class="st">"Girls"</span> <span class="sc">&amp;</span> </span>
+<span id="cb5-152"><a href="#cb5-152" aria-hidden="true" tabindex="-1"></a>           exposure_period <span class="sc">==</span> <span class="st">"pre-natal"</span> <span class="sc">&amp;</span> (exposure_time <span class="sc">==</span> <span class="st">"1st trimester"</span> <span class="sc">|</span></span>
+<span id="cb5-153"><a href="#cb5-153" aria-hidden="true" tabindex="-1"></a>          exposure_time <span class="sc">==</span> <span class="st">"2nd trimester"</span> <span class="sc">|</span> exposure_time <span class="sc">==</span> <span class="st">"3rd trimester"</span>) </span>
+<span id="cb5-154"><a href="#cb5-154" aria-hidden="true" tabindex="-1"></a>         <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)</span>
+<span id="cb5-155"><a href="#cb5-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-156"><a href="#cb5-156" aria-hidden="true" tabindex="-1"></a>m.pm_girls_pre_tri<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb5-157"><a href="#cb5-157" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb5-158"><a href="#cb5-158" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb5-159"><a href="#cb5-159" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> exposure_time,</span>
+<span id="cb5-160"><a href="#cb5-160" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb5-161"><a href="#cb5-161" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb5-162"><a href="#cb5-162" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb5-163"><a href="#cb5-163" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-164"><a href="#cb5-164" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb5-165"><a href="#cb5-165" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-166"><a href="#cb5-166" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb5-167"><a href="#cb5-167" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb5-168"><a href="#cb5-168" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb5-169"><a href="#cb5-169" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb5-170"><a href="#cb5-170" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_girls_pre_tri_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="summarise-meta-output-for-pm2.5" class="level2">
-<h2 class="anchored" data-anchor-id="summarise-meta-output-for-pm2.5">Summarise meta output for PM2.5</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.pm_total_pre_preg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                    Effect Size              95%-CI %W(random)
-Chiu et al. (2016)     -10.2000 [-27.8000;  7.4000]        3.5
-Holm et al. (2023)      -5.9700 [ -9.9300; -1.9300]       66.8
-Porta et al. (2016)     -1.9000 [ -7.9000;  4.1000]       29.7
-
-Number of studies: k = 3
-
-                          Effect Size             95%-CI     t p-value
-Random effects model (HK)     -4.9070 [-11.2951; 1.4812] -3.31  0.0806
-Prediction interval                   [-11.2951; 1.4812]              
-
-Quantifying heterogeneity (with 95%-CIs):
- tau^2 = 0 [0.0000; &gt;100.0000]; tau = 0 [0.0000; &gt;10.0000]
- I^2 = 0.0% [0.0%; 89.6%]; H = 1.00 [1.00; 3.10]
-
-Test of heterogeneity:
-    Q d.f. p-value
- 1.58    2  0.4530
-
-Details of meta-analysis methods:
-- Inverse variance method
-- DerSimonian-Laird estimator for tau^2
-- Jackson method for confidence interval of tau^2 and tau
-- Calculation of I^2 based on Q
-- Hartung-Knapp adjustment for random effects model (df = 2)
-- Hartung-Knapp prediction interval (df = 2)</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span> (m.pm_total_pre_tri)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                      Effect Size            95%-CI %W(random) exposure_time
-Ni et al. (2022)           4.4500 [ 0.2500; 8.6500]        4.3 1st trimester
-Ni et al. (2022)          -2.4000 [-6.3500; 1.5500]        4.8 2nd trimester
-Ni et al. (2022)          -0.8500 [-4.4000; 2.7000]        5.8 3rd trimester
-Sun et al. (2023)          2.6800 [-5.4200; 0.0800]        9.0 1st trimester
-Sun et al. (2023)          0.3600 [-1.0000; 1.7400]       23.3 2nd trimester
-Sun et al. (2023)          0.3200 [-1.6000; 0.9600]       25.0 3rd trimester
-Tokuda et al.&nbsp; (2023)      1.3500 [ 0.3500; 5.1700]       11.1 1st trimester
-Tokuda et al.&nbsp; (2023)      1.7300 [ 0.5800; 5.2700]       11.6 2nd trimester
-Tokuda et al.&nbsp; (2023)      2.5200 [ 0.7500; 8.4300]        5.1 3rd trimester
-
-Number of studies: k = 9
-
-                          Effect Size            95%-CI    t p-value
-Random effects model (HK)      0.9100 [-0.2197; 2.0397] 1.86  0.1003
-Prediction interval                   [-0.9972; 2.8172]             
-
-Quantifying heterogeneity (with 95%-CIs):
- tau^2 = 0.4440 [0.0000; 8.9696]; tau = 0.6663 [0.0000; 2.9949]
- I^2 = 24.2% [0.0%; 64.3%]; H = 1.15 [1.00; 1.67]
-
-Test of heterogeneity:
-     Q d.f. p-value
- 10.56    8  0.2281
-
-Results for subgroups (random effects model (HK)):
-                                k Effect Size            95%-CI  tau^2    tau
-exposure_time = 1st trimester   3      2.3237 [-1.0207; 5.6681]      0      0
-exposure_time = 2nd trimester   3      0.3901 [-3.5716; 4.3517] 0.8246 0.9081
-exposure_time = 3rd trimester   3      0.3944 [-1.9049; 2.6937]      0      0
-                                 Q   I^2
-exposure_time = 1st trimester 1.68  0.0%
-exposure_time = 2nd trimester 3.16 36.7%
-exposure_time = 3rd trimester 1.66  0.0%
-
-Test for subgroup differences (random effects model (HK)):
-                  Q d.f. p-value
-Between groups 4.56    2  0.1024
-
-Details of meta-analysis methods:
-- Inverse variance method
-- DerSimonian-Laird estimator for tau^2
-- Jackson method for confidence interval of tau^2 and tau
-- Calculation of I^2 based on Q
-- Hartung-Knapp adjustment for random effects model (df = 8)
-- Hartung-Knapp prediction interval (df = 8)</code></pre>
-</div>
-</div>
-</section>
-<section id="run-meta-analysis-for-no2" class="level2 unlisted hidden">
-<h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-no2">Run meta-analysis for NO2</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>standardised_no2_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"NO2"</span> <span class="sc">&amp;</span> exposure_standard_ugm3 <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">==</span> <span class="st">"Total"</span>)</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>m.no2_overall<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
-<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
-<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> standardised_no2_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="summarise-meta-output-for-no2" class="level2">
-<h2 class="anchored" data-anchor-id="summarise-meta-output-for-no2">Summarise meta output for No2</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m.pm_total_pre_preg)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>                    Effect Size              95%-CI %W(random)
-Chiu et al. (2016)     -10.2000 [-27.8000;  7.4000]        3.5
-Holm et al. (2023)      -5.9700 [ -9.9300; -1.9300]       66.8
-Porta et al. (2016)     -1.9000 [ -7.9000;  4.1000]       29.7
-
-Number of studies: k = 3
-
-                          Effect Size             95%-CI     t p-value
-Random effects model (HK)     -4.9070 [-11.2951; 1.4812] -3.31  0.0806
-Prediction interval                   [-11.2951; 1.4812]              
-
-Quantifying heterogeneity (with 95%-CIs):
- tau^2 = 0 [0.0000; &gt;100.0000]; tau = 0 [0.0000; &gt;10.0000]
- I^2 = 0.0% [0.0%; 89.6%]; H = 1.00 [1.00; 3.10]
-
-Test of heterogeneity:
-    Q d.f. p-value
- 1.58    2  0.4530
-
-Details of meta-analysis methods:
-- Inverse variance method
-- DerSimonian-Laird estimator for tau^2
-- Jackson method for confidence interval of tau^2 and tau
-- Calculation of I^2 based on Q
-- Hartung-Knapp adjustment for random effects model (df = 2)
-- Hartung-Knapp prediction interval (df = 2)</code></pre>
-</div>
-</div>
-</section>
-<section id="pm2.5-forest-plots---total-sample" class="level2 tabset">
-<h2 class="tabset anchored" data-anchor-id="pm2.5-forest-plots---total-sample">PM2.5 Forest Plots - total sample</h2>
+<section id="pm2.5-forest-plots---pre-natal-exposure" class="level2 tabset">
+<h2 class="tabset anchored" data-anchor-id="pm2.5-forest-plots---pre-natal-exposure">PM2.5 Forest Plots - Pre-natal exposure</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Pre-natal exposure (entire pregnancy)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Pre-natal exposure by trimester</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Entire Pregnancy Measure - Total Sample</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Entire Pregnancy Measure - by Sex</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Entire Pregnancy Measure - by IQ test</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Entire Pregnancy Measure - by Statistical Model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">Entire Pregnancy Measure - by Age IQ tested</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">Entire Pregnancy Measure - by Trimester for the total sample</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false" href="">Entire Pregnancy Measure - by Trimester for boys</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false" href="">Entire Pregnancy Measure - by Trimester for girls</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_total_pre_preg,</span>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_total_pre_preg,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure, for the total sample </span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="st">       as a measure of the entire pregnancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_sex_pre_preg,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure, by sex as a measure </span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="st">       of the entire pregnancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_iq_pre_preg,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure, by iq measure </span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="st">       as a measure of the entire pregnancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_model_pre_preg,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure, by statistical model </span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="st">       as a measure of the entire pregnancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_age_pre_preg,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure, by age period tested </span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="st">       as a measure of the entire pregnancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_total_pre_tri,</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure, for the total sample by </span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="st">       pregnancy trimester"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_boys_pre_tri,</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure for boys, by pregnancy trimester"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-8-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_girls_pre_tri,</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
@@ -4168,34 +4401,12 @@ Details of meta-analysis methods:
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
 <span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
 <span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure, for the total sample as a measure of the entire pregnancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure for girls, by </span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="st">       pregnancy trimester"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_total_pre_tri,</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal PM2.5 exposure, for the total sample by pregnancy trimester"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4204,14 +4415,65 @@ Details of meta-analysis methods:
 </div>
 </div>
 </section>
+<section id="run-meta-analysis-for-no2" class="level2 unlisted hidden">
+<h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-no2">Run meta-analysis for NO2</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure (entire pregnancy)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>no2_total_pre_preg_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"NO2"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>           sample <span class="sc">==</span> <span class="st">"Total"</span> <span class="sc">&amp;</span> exposure_period <span class="sc">==</span> <span class="st">"pre-natal"</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>         <span class="sc">&amp;</span> (exposure_time <span class="sc">==</span> <span class="st">"Pregnancy"</span> <span class="sc">|</span> </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>              exposure_time <span class="sc">==</span> <span class="st">"Averaged over entire pregnancy"</span>) <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)  </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>m.no2_total_pre_preg<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> no2_total_pre_preg_data))</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure, by sex (entire pregnancy)</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a>no2_sex_pre_preg_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"NO2"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">!=</span> <span class="st">"Total"</span> <span class="sc">&amp;</span> </span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a>           exposure_period <span class="sc">==</span> <span class="st">"pre-natal"</span> </span>
+<span id="cb14-29"><a href="#cb14-29" aria-hidden="true" tabindex="-1"></a>         <span class="sc">&amp;</span> (exposure_time <span class="sc">==</span> <span class="st">"Pregnancy"</span> <span class="sc">|</span> </span>
+<span id="cb14-30"><a href="#cb14-30" aria-hidden="true" tabindex="-1"></a>              exposure_time <span class="sc">==</span> <span class="st">"Averaged over entire pregnancy"</span>) <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)  </span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a>m.no2_sex_pre_preg<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> sample,</span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> no2_sex_pre_preg_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="no2-forest-plots" class="level2 tabset">
 <h2 class="tabset anchored" data-anchor-id="no2-forest-plots">NO2 Forest Plots</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">NO2 - Overall, random-effects</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Pre-natal exposure (entire pregnancy)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Pre-natal exposure by sex (entire pregnancy)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.no2_overall,</span>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_total_pre_preg,</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
@@ -4222,11 +4484,36 @@ Details of meta-analysis methods:
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for NO2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal NO2 exposure, for the total sample </span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="st">       as a measure of the entire pregnancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">forest</span>(m.pm_sex_pre_preg,</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">sortvar =</span> TE,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>       <span class="at">prediction =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.tau2 =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2 =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">print.I2.ci =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftcols =</span> <span class="fu">c</span>(<span class="st">"studlab"</span>, <span class="st">"statistic"</span>, <span class="st">"pval"</span>, <span class="st">"seTE"</span>, <span class="st">"w.random"</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">leftlabs =</span> <span class="fu">c</span>(<span class="st">"Study"</span>, <span class="st">"I2"</span>, <span class="st">"P"</span>, <span class="st">"SE"</span>, <span class="st">"Weight"</span>),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">rightcols =</span> <span class="fu">c</span>(<span class="st">"effect.ci"</span>),</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">fontsize =</span> <span class="dv">6</span>,</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">spacing =</span> <span class="fl">0.5</span>,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Forest Plot for pre-natal NO2 exposure, by sex as a measure of </span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="st">       the entire pregnancy"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -4238,13 +4525,13 @@ Details of meta-analysis methods:
 </section>
 <section id="questions-for-matt" class="level1">
 <h1>Questions for Matt</h1>
-<ul>
-<li><p>[] Ni et al 2022 - You extracted model three data from Table 4 for everything except the 1st trimester where Model two was extracted - is this correct? - Have updated to model three.</p></li>
-<li><p>[] Tokuda et al 2023 - Why have you not extracted the trimester data? - Why was the parts per ug/m3 not included? Text indicates change is per IQR which is available in Table 3. - Have updated to include this information.</p></li>
-<li><p>[] Wang et al 2017 - updated IQR range of exposure from 7.3 to 7.73.</p></li>
-<li><p>[] Loftus et al 2019 “Prenatal air pollution and childhood ID: Preliminary evidence of effect modification by folate” - some how I ended up with this paper printed out but can’t find it in your list of included or excluded papers?</p></li>
-<li><p>[] Have extracted extra data from the figures using Web Plot Digitizer (https://apps.automeris.io/wpd4/) - include or exclude these data?</p></li>
-<li><p>[] Have converted some standard error data to 95% CI and PPB to ug/m3 - include or exclude these data?</p></li>
+<ul class="task-list">
+<li><p><label><input type="checkbox" checked="">Ni et al 2022 - You extracted model three data from Table 4 for everything except the 1st trimester where Model two was extracted - is this correct? - Have updated to model three.</label></p></li>
+<li><p><label><input type="checkbox" checked="">Tokuda et al 2023 - Why have you not extracted the trimester data? - Why was the parts per ug/m3 not included? Text indicates change is per IQR which is available in Table 3. - Have updated to include this information.</label></p></li>
+<li><p><label><input type="checkbox" checked="">Wang et al 2017 - updated IQR range of exposure from 7.3 to 7.73.</label></p></li>
+<li><p><label><input type="checkbox" checked="">Loftus et al 2019 “Prenatal air pollution and childhood ID: Preliminary evidence of effect modification by folate” - some how I ended up with this paper printed out but can’t find it in your list of included or excluded papers?</label></p></li>
+<li><p><label><input type="checkbox" checked="">Have extracted extra data from the figures using Web Plot Digitizer (https://apps.automeris.io/wpd4/) - include or exclude these data?</label></p></li>
+<li><p><label><input type="checkbox" checked="">Have converted some standard error data to 95% CI and PPB to ug/m3 - include or exclude these data?</label></p></li>
 </ul>
 </section>
 <section id="to-do" class="level1">
@@ -4254,7 +4541,7 @@ Details of meta-analysis methods:
 <li><p><label><input type="checkbox" checked="">Import data into R</label></p></li>
 <li><p><label><input type="checkbox" checked="">Standardised effect sizes &amp; associated CIs</label></p></li>
 <li><p><label><input type="checkbox" checked="">Run overall meta-analysis models</label></p></li>
-<li><p>[] Run meta-analysis models by exposure time</p></li>
+<li><p><label><input type="checkbox" checked="">Run meta-analysis models by exposure time</label></p></li>
 <li><p>[] Include risk of bias and sample size for each study?</p></li>
 </ul>
 </section>
