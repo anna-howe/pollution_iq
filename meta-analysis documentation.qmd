@@ -123,7 +123,7 @@ standardised_review_data <- standardised_review_data |>
 
 ```
 ## Standardised Data
-```{r}
+```{r, echo=FALSE}
 knitr::kable(standardised_review_data)
 ```
 
@@ -308,7 +308,7 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
 ## PM2.5 Forest Plots - Pre-natal exposure {.tabset}
 :::{.panel-tabset}
 # Entire Pregnancy Measure - Total Sample
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_total_pre_preg,
        sortvar = TE,
        prediction = TRUE,
@@ -325,7 +325,7 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
 ```
 
 # Entire Pregnancy Measure - by Sex
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_sex_pre_preg,
        sortvar = TE,
        prediction = TRUE,
@@ -342,7 +342,7 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
 ```
 
 # Entire Pregnancy Measure - by IQ test
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_iq_pre_preg,
        sortvar = TE,
        prediction = TRUE,
@@ -359,7 +359,7 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
 ```
 
 # Entire Pregnancy Measure - by Statistical Model
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_model_pre_preg,
        sortvar = TE,
        prediction = TRUE,
@@ -376,7 +376,7 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
 ```
 
 # Entire Pregnancy Measure - by Age IQ tested
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_age_pre_preg,
        sortvar = TE,
        prediction = TRUE,
@@ -393,7 +393,7 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
 ```
 
 # Entire Pregnancy Measure - by Trimester for the total sample
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_total_pre_tri,
        sortvar = TE,
        prediction = TRUE,
@@ -410,7 +410,7 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
 ```
 
 # Entire Pregnancy Measure - by Trimester for boys
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_boys_pre_tri,
        sortvar = TE,
        prediction = TRUE,
@@ -426,7 +426,7 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
     
 ```
 # Entire Pregnancy Measure - by Trimester for girls
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_girls_pre_tri,
        sortvar = TE,
        prediction = TRUE,
@@ -500,7 +500,7 @@ m.no2_sex_pre_preg=(metagen(TE = standardised_effect_size, lower=standardised_ci
 :::{.panel-tabset}
 
 # Pre-natal exposure (entire pregnancy)
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_total_pre_preg,
        sortvar = TE,
        prediction = TRUE,
@@ -517,7 +517,7 @@ m.no2_sex_pre_preg=(metagen(TE = standardised_effect_size, lower=standardised_ci
 ```
 
 # Pre-natal exposure by sex (entire pregnancy)
-```{r}
+```{r, echo=FALSE}
     forest(m.pm_sex_pre_preg,
        sortvar = TE,
        prediction = TRUE,
