@@ -127,9 +127,9 @@ standardised_review_data <- standardised_review_data |>
 knitr::kable(standardised_review_data)
 ```
 
-# Overall Meta-analysis 
+# Meta-analysis Forest Plots
 
-## Run meta-analysis for PM {.unlisted .hidden}
+## Run meta-analysis for pre-natal PM exposure {.unlisted .hidden}
 ```{r}
 ### Pre-natal exposure (entire pregnancy)
 
@@ -305,9 +305,9 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
 
 ```
 
-## PM2.5 Forest Plots - Pre-natal exposure {.tabset}
+## PM2.5 Forest Plots - Pre-natal exposure (entire pregnacy) {.tabset}
 :::{.panel-tabset}
-# Entire Pregnancy Measure - Total Sample
+# Total Sample
 ```{r, echo=FALSE}
     forest(m.pm_total_pre_preg,
        sortvar = TE,
@@ -320,11 +320,11 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
        rightcols = c("effect.ci"),
        fontsize = 6,
        spacing = 0.5,
-       title = "Forest Plot for pre-natal PM2.5 exposure, for the total sample 
-       as a measure of the entire pregnancy")
+       title = "Pre-natal PM2.5 exposure as a measure of the entire
+       pregnancy")
 ```
 
-# Entire Pregnancy Measure - by Sex
+# By Sex
 ```{r, echo=FALSE}
     forest(m.pm_sex_pre_preg,
        sortvar = TE,
@@ -337,11 +337,11 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
        rightcols = c("effect.ci"),
        fontsize = 6,
        spacing = 0.5,
-       title = "Forest Plot for pre-natal PM2.5 exposure, by sex as a measure 
-       of the entire pregnancy")
+       title = "Pre-natal PM2.5 exposure as a measure of the entire
+       pregnancy, by sex")
 ```
 
-# Entire Pregnancy Measure - by IQ test
+# By IQ test
 ```{r, echo=FALSE}
     forest(m.pm_iq_pre_preg,
        sortvar = TE,
@@ -354,11 +354,11 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
        rightcols = c("effect.ci"),
        fontsize = 6,
        spacing = 0.5,
-       title = "Forest Plot for pre-natal PM2.5 exposure, by iq measure 
-       as a measure of the entire pregnancy")
+       title = "Pre-natal PM2.5 exposure as a measure of the entire
+       pregnancy, by IQ measure")
 ```
 
-# Entire Pregnancy Measure - by Statistical Model
+# By Statistical Model
 ```{r, echo=FALSE}
     forest(m.pm_model_pre_preg,
        sortvar = TE,
@@ -371,11 +371,11 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
        rightcols = c("effect.ci"),
        fontsize = 6,
        spacing = 0.5,
-       title = "Forest Plot for pre-natal PM2.5 exposure, by statistical model 
-       as a measure of the entire pregnancy")
+       title = "Pre-natal PM2.5 exposure as a measure of the entire
+       pregnancy, by statistical model")
 ```
 
-# Entire Pregnancy Measure - by Age IQ tested
+# By age IQ tested
 ```{r, echo=FALSE}
     forest(m.pm_age_pre_preg,
        sortvar = TE,
@@ -388,11 +388,15 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
        rightcols = c("effect.ci"),
        fontsize = 6,
        spacing = 0.5,
-       title = "Forest Plot for pre-natal PM2.5 exposure, by age period tested 
-       as a measure of the entire pregnancy")
+       title = "Pre-natal PM2.5 exposure as a measure of the entire
+       pregnancy, by age period tested")
 ```
+:::
 
-# Entire Pregnancy Measure - by Trimester for the total sample
+## PM2.5 Forest Plots - Pre-natal exposure by Trimester {.tabset}
+:::{.panel-tabset}
+
+# Total sample
 ```{r, echo=FALSE}
     forest(m.pm_total_pre_tri,
        sortvar = TE,
@@ -409,7 +413,7 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
        pregnancy trimester")
 ```
 
-# Entire Pregnancy Measure - by Trimester for boys
+# For boys
 ```{r, echo=FALSE}
     forest(m.pm_boys_pre_tri,
        sortvar = TE,
@@ -425,7 +429,8 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
        title = "Forest Plot for pre-natal PM2.5 exposure for boys, by pregnancy trimester")
     
 ```
-# Entire Pregnancy Measure - by Trimester for girls
+
+# For girls
 ```{r, echo=FALSE}
     forest(m.pm_girls_pre_tri,
        sortvar = TE,
@@ -442,10 +447,9 @@ m.pm_girls_pre_tri=(metagen(TE = standardised_effect_size, lower=standardised_ci
        pregnancy trimester")
     
 ```
-
 :::
 
-## Run meta-analysis for NO2 {.unlisted .hidden}
+## Run meta-analysis for pre-natal NO2 exposure {.unlisted .hidden}
 ```{r}
 ### Pre-natal exposure (entire pregnancy)
 
@@ -532,8 +536,192 @@ m.no2_sex_pre_preg=(metagen(TE = standardised_effect_size, lower=standardised_ci
        title = "Forest Plot for pre-natal NO2 exposure, by sex as a measure of 
        the entire pregnancy")
 ```
+:::
+
+## Run meta-analysis for post-natal PM exposure {.unlisted .hidden}
+```{r}
+### Pre-natal exposure (entire pregnancy)
+
+pm_total_post_data <- standardised_review_data |>
+  filter(exposure == "PM2.5" & exposure_level != "NA" & sample == "Total" & 
+           exposure_period == "post-natal" & reference != 3)  
+
+m.pm_total_postnatal=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+               upper=standardised_ci_upper,
+               studlab = study,
+               #prediction = exposure_level,
+               sm = "Effect Size",
+               common = FALSE,
+               random = TRUE,
+               method.tau = "DL",
+               method.random.ci = "HK",
+               method.predict = "HK",
+               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
+                                    #estimator of τ2
+               method.I2 = "Q",
+               data = pm_total_post_data))
+
+### Post-natal exposure, by sex
+
+pm_sex_post_data <- standardised_review_data |>
+  filter(exposure == "PM2.5" & exposure_level != "NA" & sample != "Total" & 
+           exposure_period == "post-natal" & reference != 3)  
+
+m.pm_sex_postnatal=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+               upper=standardised_ci_upper,
+               studlab = study,
+               subgroup = sample,
+               #prediction = exposure_level,
+               sm = "Effect Size",
+               common = FALSE,
+               random = TRUE,
+               method.tau = "DL",
+               method.random.ci = "HK",
+               method.predict = "HK",
+               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
+                                    #estimator of τ2
+               method.I2 = "Q",
+               data = pm_sex_post_data))
+
+### Post-natal exposure, by iq test
+
+m.pm_iq_postnatal=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+               upper=standardised_ci_upper,
+               studlab = study,
+               subgroup = iq_wechsler,
+               #prediction = exposure_level,
+               sm = "Effect Size",
+               common = FALSE,
+               random = TRUE,
+               method.tau = "DL",
+               method.random.ci = "HK",
+               method.predict = "HK",
+               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
+                                    #estimator of τ2
+               method.I2 = "Q",
+               data = pm_total_post_data))
 
 
+### Post-natal exposure, by statistical model
+
+m.pm_model_postnatal =(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+               upper=standardised_ci_upper,
+               studlab = study,
+               subgroup = model_distributed,
+               #prediction = exposure_level,
+               sm = "Effect Size",
+               common = FALSE,
+               random = TRUE,
+               method.tau = "DL",
+               method.random.ci = "HK",
+               method.predict = "HK",
+               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
+                                    #estimator of τ2
+               method.I2 = "Q",
+               data = pm_total_post_data))
+
+
+### Post-natal exposure, by age tested
+
+m.pm_age_postnatal=(metagen(TE = standardised_effect_size, lower=standardised_ci_lower,
+               upper=standardised_ci_upper,
+               studlab = study,
+               subgroup = age_period_tested,
+               #prediction = exposure_level,
+               sm = "Effect Size",
+               common = FALSE,
+               random = TRUE,
+               method.tau = "DL",
+               method.random.ci = "HK",
+               method.predict = "HK",
+               method.tau.ci = "J", #Jackson method recommended for DerSimonian-Laird 
+                                    #estimator of τ2
+               method.I2 = "Q",
+               data = pm_total_post_data))
+
+```
+
+## PM2.5 Forest Plots - Post-natal exposure {.tabset}
+:::{.panel-tabset}
+# Total Sample
+```{r, echo=FALSE}
+    forest(m.pm_total_postnatal,
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       print.I2 = TRUE,
+       print.I2.ci = TRUE,
+       leftcols = c("studlab", "statistic", "pval", "seTE", "w.random"),
+       leftlabs = c("Study", "I2", "P", "SE", "Weight"),
+       rightcols = c("effect.ci"),
+       fontsize = 6,
+       spacing = 0.5,
+       title = "Post-natal PM2.5 exposure, total sample")
+```
+
+# By Sex
+```{r, echo=FALSE}
+    forest(m.pm_sex_postnatal,
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       print.I2 = TRUE,
+       print.I2.ci = TRUE,
+       leftcols = c("studlab", "statistic", "pval", "seTE", "w.random"),
+       leftlabs = c("Study", "I2", "P", "SE", "Weight"),
+       rightcols = c("effect.ci"),
+       fontsize = 6,
+       spacing = 0.5,
+       title = "Post-natal PM2.5 exposure, by sex")
+```
+
+# By IQ test
+```{r, echo=FALSE}
+    forest(m.pm_iq_postnatal,
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       print.I2 = TRUE,
+       print.I2.ci = TRUE,
+       leftcols = c("studlab", "statistic", "pval", "seTE", "w.random"),
+       leftlabs = c("Study", "I2", "P", "SE", "Weight"),
+       rightcols = c("effect.ci"),
+       fontsize = 6,
+       spacing = 0.5,
+       title = "Post-natal PM2.5 exposure, by IQ measure")
+```
+
+# By Statistical Model
+```{r, echo=FALSE}
+    forest(m.pm_model_postnatal,
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       print.I2 = TRUE,
+       print.I2.ci = TRUE,
+       leftcols = c("studlab", "statistic", "pval", "seTE", "w.random"),
+       leftlabs = c("Study", "I2", "P", "SE", "Weight"),
+       rightcols = c("effect.ci"),
+       fontsize = 6,
+       spacing = 0.5,
+       title = "Post-natal PM2.5 exposure, by statistical model")
+```
+
+# By age IQ tested
+```{r, echo=FALSE}
+    forest(m.pm_age_postnatal,
+       sortvar = TE,
+       prediction = TRUE,
+       print.tau2 = FALSE,
+       print.I2 = TRUE,
+       print.I2.ci = TRUE,
+       leftcols = c("studlab", "statistic", "pval", "seTE", "w.random"),
+       leftlabs = c("Study", "I2", "P", "SE", "Weight"),
+       rightcols = c("effect.ci"),
+       fontsize = 6,
+       spacing = 0.5,
+       title = "Post-natal PM2.5 exposure, by age period tested")
+```
 :::
 
 # Questions for Matt

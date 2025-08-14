@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Anna Howe">
-<meta name="dcterms.date" content="2025-08-11">
+<meta name="dcterms.date" content="2025-08-14">
 
 <title>Meta-analysis: Pollution and IQ</title>
 <style>
@@ -292,10 +292,12 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#standardised-data" id="toc-standardised-data" class="nav-link" data-scroll-target="#standardised-data">Standardised Data</a></li>
   </ul></li>
-  <li><a href="#overall-meta-analysis" id="toc-overall-meta-analysis" class="nav-link" data-scroll-target="#overall-meta-analysis">Overall Meta-analysis</a>
+  <li><a href="#meta-analysis-forest-plots" id="toc-meta-analysis-forest-plots" class="nav-link" data-scroll-target="#meta-analysis-forest-plots">Meta-analysis Forest Plots</a>
   <ul class="collapse">
-  <li><a href="#pm2.5-forest-plots---pre-natal-exposure" id="toc-pm2.5-forest-plots---pre-natal-exposure" class="nav-link" data-scroll-target="#pm2.5-forest-plots---pre-natal-exposure">PM2.5 Forest Plots - Pre-natal exposure</a></li>
+  <li><a href="#pm2.5-forest-plots---pre-natal-exposure-entire-pregnacy" id="toc-pm2.5-forest-plots---pre-natal-exposure-entire-pregnacy" class="nav-link" data-scroll-target="#pm2.5-forest-plots---pre-natal-exposure-entire-pregnacy">PM2.5 Forest Plots - Pre-natal exposure (entire pregnacy)</a></li>
+  <li><a href="#pm2.5-forest-plots---pre-natal-exposure-by-trimester" id="toc-pm2.5-forest-plots---pre-natal-exposure-by-trimester" class="nav-link" data-scroll-target="#pm2.5-forest-plots---pre-natal-exposure-by-trimester">PM2.5 Forest Plots - Pre-natal exposure by Trimester</a></li>
   <li><a href="#no2-forest-plots" id="toc-no2-forest-plots" class="nav-link" data-scroll-target="#no2-forest-plots">NO2 Forest Plots</a></li>
+  <li><a href="#pm2.5-forest-plots---post-natal-exposure" id="toc-pm2.5-forest-plots---post-natal-exposure" class="nav-link" data-scroll-target="#pm2.5-forest-plots---post-natal-exposure">PM2.5 Forest Plots - Post-natal exposure</a></li>
   </ul></li>
   <li><a href="#questions-for-matt" id="toc-questions-for-matt" class="nav-link" data-scroll-target="#questions-for-matt">Questions for Matt</a></li>
   <li><a href="#to-do" id="toc-to-do" class="nav-link" data-scroll-target="#to-do">To do</a></li>
@@ -332,14 +334,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 11, 2025</p>
+      <p class="date">August 14, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 11, 2025</p>
+      <p class="date-modified">August 14, 2025</p>
     </div>
   </div>
     
@@ -456,25 +458,25 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 2%">
-<col style="width: 5%">
+<col style="width: 4%">
 <col style="width: 1%">
 <col style="width: 1%">
+<col style="width: 6%">
+<col style="width: 3%">
+<col style="width: 4%">
 <col style="width: 7%">
-<col style="width: 3%">
-<col style="width: 4%">
-<col style="width: 2%">
 <col style="width: 2%">
 <col style="width: 4%">
 <col style="width: 3%">
-<col style="width: 9%">
-<col style="width: 3%">
+<col style="width: 8%">
+<col style="width: 4%">
 <col style="width: 1%">
 <col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 3%">
-<col style="width: 9%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 8%">
 <col style="width: 5%">
-<col style="width: 5%">
+<col style="width: 4%">
 <col style="width: 5%">
 <col style="width: 4%">
 <col style="width: 4%">
@@ -515,12 +517,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Averaged across sensitive window</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">267</td>
 <td style="text-align: right;">-0.65</td>
 <td style="text-align: right;">-1.410000</td>
@@ -540,12 +542,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Averaged over entire pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">267</td>
 <td style="text-align: right;">-1.02</td>
 <td style="text-align: right;">-2.780000</td>
@@ -565,12 +567,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Averaged across sensitive window</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">148</td>
 <td style="text-align: right;">-1.00</td>
 <td style="text-align: right;">-1.970000</td>
@@ -590,12 +592,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Averaged over entire pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">148</td>
 <td style="text-align: right;">-0.90</td>
 <td style="text-align: right;">-2.700000</td>
@@ -615,12 +617,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Averaged across sensitive window</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">119</td>
 <td style="text-align: right;">0.14</td>
 <td style="text-align: right;">-0.870000</td>
@@ -640,12 +642,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Averaged over entire pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">119</td>
 <td style="text-align: right;">0.08</td>
 <td style="text-align: right;">-2.100000</td>
@@ -665,12 +667,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">148</td>
 <td style="text-align: right;">-0.24</td>
 <td style="text-align: right;">-1.592375</td>
@@ -690,12 +692,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">148</td>
 <td style="text-align: right;">-0.05</td>
 <td style="text-align: right;">-1.539573</td>
@@ -715,12 +717,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">148</td>
 <td style="text-align: right;">-1.45</td>
 <td style="text-align: right;">-2.919973</td>
@@ -740,12 +742,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">119</td>
 <td style="text-align: right;">0.55</td>
 <td style="text-align: right;">-1.057171</td>
@@ -765,12 +767,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">119</td>
 <td style="text-align: right;">-1.11</td>
 <td style="text-align: right;">-2.717170</td>
@@ -790,12 +792,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">119</td>
 <td style="text-align: right;">0.41</td>
 <td style="text-align: right;">-1.275569</td>
@@ -815,12 +817,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">4 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.03</td>
 <td style="text-align: right;">0.000000</td>
@@ -840,12 +842,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">8 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.01</td>
 <td style="text-align: right;">-0.010000</td>
@@ -865,12 +867,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">12 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">-0.030000</td>
@@ -890,12 +892,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">16 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.030000</td>
@@ -915,12 +917,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">20 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.030000</td>
@@ -940,12 +942,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">24 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.040000</td>
@@ -965,12 +967,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">28 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.030000</td>
@@ -990,12 +992,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">32 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.02</td>
 <td style="text-align: right;">-0.050000</td>
@@ -1015,12 +1017,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">6 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.05</td>
 <td style="text-align: right;">0.000000</td>
@@ -1040,12 +1042,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">12 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.03</td>
 <td style="text-align: right;">-0.010000</td>
@@ -1065,12 +1067,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">18 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.01</td>
 <td style="text-align: right;">-0.030000</td>
@@ -1090,12 +1092,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">24 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.040000</td>
@@ -1115,12 +1117,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">30 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.02</td>
 <td style="text-align: right;">-0.040000</td>
@@ -1140,12 +1142,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">36 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.02</td>
 <td style="text-align: right;">-0.040000</td>
@@ -1165,12 +1167,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">42 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.02</td>
 <td style="text-align: right;">-0.040000</td>
@@ -1190,12 +1192,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">48 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.030000</td>
@@ -1215,12 +1217,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">54 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.030000</td>
@@ -1240,12 +1242,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">KBIT-2 verbal</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">8 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1109</td>
 <td style="text-align: right;">-0.20</td>
 <td style="text-align: right;">-1.400000</td>
@@ -1265,12 +1267,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Birth‒age 6</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">KBIT-2 verbal</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">8 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1109</td>
 <td style="text-align: right;">0.70</td>
 <td style="text-align: right;">-0.400000</td>
@@ -1290,12 +1292,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Year before cognitive testing</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">KBIT-2 verbal</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">8 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1109</td>
 <td style="text-align: right;">1.10</td>
 <td style="text-align: right;">0.000000</td>
@@ -1315,12 +1317,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">10.5 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">568</td>
 <td style="text-align: right;">-1.79</td>
 <td style="text-align: right;">-2.980000</td>
@@ -1340,12 +1342,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">10.5 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">181</td>
 <td style="text-align: right;">-1.55</td>
 <td style="text-align: right;">-3.100000</td>
@@ -1365,12 +1367,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">10.5 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">387</td>
 <td style="text-align: right;">-1.94</td>
 <td style="text-align: right;">-3.850000</td>
@@ -1390,12 +1392,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Bayesian distributed lag interaction model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">553</td>
 <td style="text-align: right;">-0.35</td>
 <td style="text-align: right;">-0.680000</td>
@@ -1415,12 +1417,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-V</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">13-16 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">4683</td>
 <td style="text-align: right;">0.77</td>
 <td style="text-align: right;">-2.240000</td>
@@ -1440,12 +1442,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Childhood</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-V</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">13-16 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">4683</td>
 <td style="text-align: right;">1.18</td>
 <td style="text-align: right;">-2.740000</td>
@@ -1465,12 +1467,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1391</td>
 <td style="text-align: right;">0.89</td>
 <td style="text-align: right;">0.050000</td>
@@ -1490,12 +1492,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1391</td>
 <td style="text-align: right;">-0.48</td>
 <td style="text-align: right;">-1.270000</td>
@@ -1515,12 +1517,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1383</td>
 <td style="text-align: right;">-0.17</td>
 <td style="text-align: right;">-0.880000</td>
@@ -1540,12 +1542,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1391</td>
 <td style="text-align: right;">0.18</td>
 <td style="text-align: right;">-1.250000</td>
@@ -1565,12 +1567,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">0–2 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1375</td>
 <td style="text-align: right;">-0.80</td>
 <td style="text-align: right;">-3.000000</td>
@@ -1590,12 +1592,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1284</td>
 <td style="text-align: right;">-2.18</td>
 <td style="text-align: right;">-5.000000</td>
@@ -1615,12 +1617,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.70</td>
 <td style="text-align: right;">-0.300000</td>
@@ -1640,12 +1642,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-1.19</td>
 <td style="text-align: right;">-2.180000</td>
@@ -1665,12 +1667,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-0.27</td>
 <td style="text-align: right;">-1.060000</td>
@@ -1690,12 +1692,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-0.58</td>
 <td style="text-align: right;">-2.040000</td>
@@ -1715,12 +1717,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">0–2 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-1.74</td>
 <td style="text-align: right;">-3.820000</td>
@@ -1740,12 +1742,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-2.34</td>
 <td style="text-align: right;">-4.960000</td>
@@ -1765,12 +1767,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.91</td>
 <td style="text-align: right;">-0.070000</td>
@@ -1790,12 +1792,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-0.07</td>
 <td style="text-align: right;">-0.920000</td>
@@ -1815,12 +1817,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-0.39</td>
 <td style="text-align: right;">-1.200000</td>
@@ -1840,12 +1842,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.06</td>
 <td style="text-align: right;">-1.320000</td>
@@ -1865,12 +1867,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">0–2 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-1.20</td>
 <td style="text-align: right;">-3.290000</td>
@@ -1890,12 +1892,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-3.01</td>
 <td style="text-align: right;">-5.690000</td>
@@ -1915,12 +1917,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-III</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">465</td>
 <td style="text-align: right;">-1.90</td>
 <td style="text-align: right;">-7.900000</td>
@@ -1940,12 +1942,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Multiple informant model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">512</td>
 <td style="text-align: right;">1.34</td>
 <td style="text-align: right;">-2.710000</td>
@@ -1965,12 +1967,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Multiple informant model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">512</td>
 <td style="text-align: right;">0.18</td>
 <td style="text-align: right;">-0.500000</td>
@@ -1990,12 +1992,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Multiple informant model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">512</td>
 <td style="text-align: right;">0.16</td>
 <td style="text-align: right;">-0.800000</td>
@@ -2015,12 +2017,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Multiple informant model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">298</td>
 <td style="text-align: right;">-2.56</td>
 <td style="text-align: right;">-4.450000</td>
@@ -2040,12 +2042,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Multiple informant model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">298</td>
 <td style="text-align: right;">-0.08</td>
 <td style="text-align: right;">-1.000000</td>
@@ -2065,12 +2067,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Multiple informant model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">298</td>
 <td style="text-align: right;">-0.14</td>
 <td style="text-align: right;">-1.010000</td>
@@ -2090,12 +2092,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Multiple informant model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">214</td>
 <td style="text-align: right;">0.34</td>
 <td style="text-align: right;">-1.650000</td>
@@ -2115,12 +2117,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Multiple informant model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">214</td>
 <td style="text-align: right;">0.34</td>
 <td style="text-align: right;">-0.690000</td>
@@ -2140,12 +2142,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">214</td>
 <td style="text-align: right;">-0.44</td>
 <td style="text-align: right;">-1.390000</td>
@@ -2165,12 +2167,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">195</td>
 <td style="text-align: right;">0.66</td>
 <td style="text-align: right;">0.300000</td>
@@ -2190,12 +2192,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">195</td>
 <td style="text-align: right;">0.62</td>
 <td style="text-align: right;">0.160000</td>
@@ -2215,12 +2217,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">195</td>
 <td style="text-align: right;">0.57</td>
 <td style="text-align: right;">0.190000</td>
@@ -2240,12 +2242,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">195</td>
 <td style="text-align: right;">1.11</td>
 <td style="text-align: right;">0.330000</td>
@@ -2265,12 +2267,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">0–1 year</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">195</td>
 <td style="text-align: right;">1.00</td>
 <td style="text-align: right;">0.540000</td>
@@ -2290,12 +2292,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1–3 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">195</td>
 <td style="text-align: right;">1.02</td>
 <td style="text-align: right;">0.610000</td>
@@ -2315,12 +2317,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3–5 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">195</td>
 <td style="text-align: right;">0.79</td>
 <td style="text-align: right;">0.440000</td>
@@ -2340,12 +2342,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">114</td>
 <td style="text-align: right;">0.59</td>
 <td style="text-align: right;">0.230000</td>
@@ -2365,12 +2367,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">114</td>
 <td style="text-align: right;">0.58</td>
 <td style="text-align: right;">0.120000</td>
@@ -2390,12 +2392,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">114</td>
 <td style="text-align: right;">0.61</td>
 <td style="text-align: right;">0.180000</td>
@@ -2415,12 +2417,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">114</td>
 <td style="text-align: right;">0.89</td>
 <td style="text-align: right;">0.210000</td>
@@ -2440,12 +2442,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">0–1 year</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">114</td>
 <td style="text-align: right;">1.05</td>
 <td style="text-align: right;">0.540000</td>
@@ -2465,12 +2467,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1–3 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">114</td>
 <td style="text-align: right;">1.00</td>
 <td style="text-align: right;">0.560000</td>
@@ -2490,12 +2492,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3–5 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">114</td>
 <td style="text-align: right;">0.74</td>
 <td style="text-align: right;">0.380000</td>
@@ -2515,12 +2517,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">81</td>
 <td style="text-align: right;">0.77</td>
 <td style="text-align: right;">0.180000</td>
@@ -2540,12 +2542,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">81</td>
 <td style="text-align: right;">0.41</td>
 <td style="text-align: right;">0.020000</td>
@@ -2565,12 +2567,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">81</td>
 <td style="text-align: right;">0.40</td>
 <td style="text-align: right;">0.020000</td>
@@ -2590,12 +2592,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">81</td>
 <td style="text-align: right;">2.71</td>
 <td style="text-align: right;">0.240000</td>
@@ -2615,12 +2617,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">0–1 year</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">81</td>
 <td style="text-align: right;">0.35</td>
 <td style="text-align: right;">0.060000</td>
@@ -2640,12 +2642,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1–3 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">81</td>
 <td style="text-align: right;">1.05</td>
 <td style="text-align: right;">0.260000</td>
@@ -2665,12 +2667,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3–5 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Logistic regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">81</td>
 <td style="text-align: right;">0.95</td>
 <td style="text-align: right;">0.200000</td>
@@ -2690,12 +2692,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Year before cognitive testing</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WASI</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">9-11 and 18-20 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Mixed-effects regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1085</td>
 <td style="text-align: right;">-2.00</td>
 <td style="text-align: right;">-4.840000</td>
@@ -2715,12 +2717,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2 years before cognitive testing</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WASI</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">9-11 and 18-20 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Mixed-effects regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1085</td>
 <td style="text-align: right;">-2.82</td>
 <td style="text-align: right;">-6.240000</td>
@@ -2740,12 +2742,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3 years before cognitive testing</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WASI</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">9-11 and 18-20 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Mixed-effects regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1085</td>
 <td style="text-align: right;">-2.12</td>
 <td style="text-align: right;">-6.370000</td>
@@ -2765,12 +2767,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">6 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1303</td>
 <td style="text-align: right;">-0.18</td>
 <td style="text-align: right;">-0.480000</td>
@@ -2790,12 +2792,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">12 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1303</td>
 <td style="text-align: right;">-0.09</td>
 <td style="text-align: right;">-0.330000</td>
@@ -2815,12 +2817,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">18 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1303</td>
 <td style="text-align: right;">-0.03</td>
 <td style="text-align: right;">-0.350000</td>
@@ -2840,12 +2842,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">24 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1303</td>
 <td style="text-align: right;">-0.03</td>
 <td style="text-align: right;">-0.260000</td>
@@ -2865,12 +2867,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">30 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1303</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.190000</td>
@@ -2890,12 +2892,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">36 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1303</td>
 <td style="text-align: right;">0.07</td>
 <td style="text-align: right;">-0.110000</td>
@@ -2915,12 +2917,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">42 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1303</td>
 <td style="text-align: right;">0.20</td>
 <td style="text-align: right;">0.020000</td>
@@ -2940,12 +2942,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">48 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1303</td>
 <td style="text-align: right;">0.37</td>
 <td style="text-align: right;">0.080000</td>
@@ -2965,12 +2967,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Age 3.5–4.1 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4.5 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1303</td>
 <td style="text-align: right;">2.56</td>
 <td style="text-align: right;">1.530000</td>
@@ -2990,12 +2992,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Childhood</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">210</td>
 <td style="text-align: right;">-1.07</td>
 <td style="text-align: right;">-9.990000</td>
@@ -3015,12 +3017,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Childhood</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">MSCA</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
 <td style="text-align: left;">4 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">210</td>
 <td style="text-align: right;">-4.19</td>
 <td style="text-align: right;">-14.020000</td>
@@ -3040,12 +3042,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">4 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.01</td>
 <td style="text-align: right;">0.000000</td>
@@ -3065,12 +3067,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">8 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">-0.010000</td>
@@ -3090,12 +3092,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">12 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.020000</td>
@@ -3115,12 +3117,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">16 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.020000</td>
@@ -3140,12 +3142,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">20 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.020000</td>
@@ -3165,12 +3167,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">24 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">-0.020000</td>
@@ -3190,12 +3192,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">28 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">-0.010000</td>
@@ -3215,12 +3217,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">32 weeks</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">-0.020000</td>
@@ -3240,12 +3242,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">6 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.02</td>
 <td style="text-align: right;">0.000000</td>
@@ -3265,12 +3267,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">12 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.01</td>
 <td style="text-align: right;">-0.010000</td>
@@ -3290,12 +3292,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">18 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">-0.030000</td>
@@ -3315,12 +3317,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">24 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.030000</td>
@@ -3340,12 +3342,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">30 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.030000</td>
@@ -3365,12 +3367,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">36 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">-0.01</td>
 <td style="text-align: right;">-0.030000</td>
@@ -3390,12 +3392,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">42 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">-0.030000</td>
@@ -3415,12 +3417,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">48 months</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">5.7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Distributed lag nonlinear model</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Distributed Lag</td>
 <td style="text-align: right;">1271</td>
 <td style="text-align: right;">0.01</td>
 <td style="text-align: right;">-0.010000</td>
@@ -3440,12 +3442,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-5</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">13-16 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">4683</td>
 <td style="text-align: right;">0.53</td>
 <td style="text-align: right;">-0.280000</td>
@@ -3465,12 +3467,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Childhood</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">WISC-5</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">13-16 years</td>
-<td style="text-align: left;">late</td>
+<td style="text-align: left;">8 years +</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">4683</td>
 <td style="text-align: right;">0.13</td>
 <td style="text-align: right;">-0.590000</td>
@@ -3490,12 +3492,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1391</td>
 <td style="text-align: right;">0.37</td>
 <td style="text-align: right;">-0.030000</td>
@@ -3515,12 +3517,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1391</td>
 <td style="text-align: right;">0.16</td>
 <td style="text-align: right;">-0.250000</td>
@@ -3540,12 +3542,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1383</td>
 <td style="text-align: right;">-0.27</td>
 <td style="text-align: right;">-0.670000</td>
@@ -3565,12 +3567,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1391</td>
 <td style="text-align: right;">0.17</td>
 <td style="text-align: right;">-0.350000</td>
@@ -3590,12 +3592,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">0-2 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1375</td>
 <td style="text-align: right;">0.25</td>
 <td style="text-align: right;">-0.350000</td>
@@ -3615,12 +3617,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">1361</td>
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">-0.560000</td>
@@ -3640,12 +3642,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.23</td>
 <td style="text-align: right;">-0.310000</td>
@@ -3665,12 +3667,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.13</td>
 <td style="text-align: right;">-0.400000</td>
@@ -3690,12 +3692,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-0.30</td>
 <td style="text-align: right;">-0.810000</td>
@@ -3715,12 +3717,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.07</td>
 <td style="text-align: right;">-0.620000</td>
@@ -3740,12 +3742,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">0-2 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.09</td>
 <td style="text-align: right;">-0.720000</td>
@@ -3765,12 +3767,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-0.03</td>
 <td style="text-align: right;">-0.790000</td>
@@ -3790,12 +3792,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.33</td>
 <td style="text-align: right;">-0.150000</td>
@@ -3815,12 +3817,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.16</td>
 <td style="text-align: right;">-0.350000</td>
@@ -3840,12 +3842,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">-0.20</td>
 <td style="text-align: right;">-0.710000</td>
@@ -3865,12 +3867,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.19</td>
 <td style="text-align: right;">-0.420000</td>
@@ -3890,12 +3892,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">0-2 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.61</td>
 <td style="text-align: right;">-0.070000</td>
@@ -3915,12 +3917,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
-<td style="text-align: left;">mixed</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.15</td>
 <td style="text-align: right;">-0.500000</td>
@@ -3940,12 +3942,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">WISC-III</td>
-<td style="text-align: left;">yes</td>
+<td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">7 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">465</td>
 <td style="text-align: right;">-1.10</td>
 <td style="text-align: right;">-2.300000</td>
@@ -3965,12 +3967,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">924</td>
 <td style="text-align: right;">1.14</td>
 <td style="text-align: right;">-0.960000</td>
@@ -3990,12 +3992,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">1.80</td>
 <td style="text-align: right;">-1.460000</td>
@@ -4015,12 +4017,12 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
 <td style="text-align: left;">SB-5</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
 <td style="text-align: left;">4-6 years</td>
-<td style="text-align: left;">early</td>
+<td style="text-align: left;">4 to 7 years</td>
 <td style="text-align: left;">Linear regression model</td>
-<td style="text-align: left;">no</td>
+<td style="text-align: left;">Linear|Logistic</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">1.02</td>
 <td style="text-align: right;">-1.520000</td>
@@ -4038,10 +4040,10 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </div>
 </section>
 </section>
-<section id="overall-meta-analysis" class="level1">
-<h1>Overall Meta-analysis</h1>
-<section id="run-meta-analysis-for-pm" class="level2 unlisted hidden">
-<h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-pm">Run meta-analysis for PM</h2>
+<section id="meta-analysis-forest-plots" class="level1">
+<h1>Meta-analysis Forest Plots</h1>
+<section id="run-meta-analysis-for-pre-natal-pm-exposure" class="level2 unlisted hidden">
+<h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-pre-natal-pm-exposure">Run meta-analysis for pre-natal PM exposure</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure (entire pregnancy)</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -4215,10 +4217,10 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_girls_pre_tri_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="pm2.5-forest-plots---pre-natal-exposure" class="level2 tabset">
-<h2 class="tabset anchored" data-anchor-id="pm2.5-forest-plots---pre-natal-exposure">PM2.5 Forest Plots - Pre-natal exposure</h2>
+<section id="pm2.5-forest-plots---pre-natal-exposure-entire-pregnacy" class="level2 tabset">
+<h2 class="tabset anchored" data-anchor-id="pm2.5-forest-plots---pre-natal-exposure-entire-pregnacy">PM2.5 Forest Plots - Pre-natal exposure (entire pregnacy)</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Entire Pregnancy Measure - Total Sample</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Entire Pregnancy Measure - by Sex</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Entire Pregnancy Measure - by IQ test</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Entire Pregnancy Measure - by Statistical Model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">Entire Pregnancy Measure - by Age IQ tested</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-6" role="tab" aria-controls="tabset-1-6" aria-selected="false" href="">Entire Pregnancy Measure - by Trimester for the total sample</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-7" role="tab" aria-controls="tabset-1-7" aria-selected="false" href="">Entire Pregnancy Measure - by Trimester for boys</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-8-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-8" role="tab" aria-controls="tabset-1-8" aria-selected="false" href="">Entire Pregnancy Measure - by Trimester for girls</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Total Sample</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">By Sex</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">By IQ test</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">By Statistical Model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">By age IQ tested</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
@@ -4275,7 +4277,15 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </div>
 </div>
 </div>
-<div id="tabset-1-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-6-tab">
+</div>
+</div>
+</section>
+<section id="pm2.5-forest-plots---pre-natal-exposure-by-trimester" class="level2 tabset">
+<h2 class="tabset anchored" data-anchor-id="pm2.5-forest-plots---pre-natal-exposure-by-trimester">PM2.5 Forest Plots - Pre-natal exposure by Trimester</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Total sample</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">For boys</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">For girls</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -4286,7 +4296,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </div>
 </div>
 </div>
-<div id="tabset-1-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-7-tab">
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -4297,7 +4307,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </div>
 </div>
 </div>
-<div id="tabset-1-8" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-8-tab">
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -4311,8 +4321,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </div>
 </div>
 </section>
-<section id="run-meta-analysis-for-no2" class="level2 unlisted hidden">
-<h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-no2">Run meta-analysis for NO2</h2>
+<section id="run-meta-analysis-for-pre-natal-no2-exposure" class="level2 unlisted hidden">
+<h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-pre-natal-no2-exposure">Run meta-analysis for pre-natal NO2 exposure</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure (entire pregnancy)</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -4365,9 +4375,9 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <section id="no2-forest-plots" class="level2 tabset">
 <h2 class="tabset anchored" data-anchor-id="no2-forest-plots">NO2 Forest Plots</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Pre-natal exposure (entire pregnancy)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Pre-natal exposure by sex (entire pregnancy)</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Pre-natal exposure (entire pregnancy)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Pre-natal exposure by sex (entire pregnancy)</a></li></ul>
 <div class="tab-content">
-<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -4378,12 +4388,178 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </div>
 </div>
 </div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
 <p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="run-meta-analysis-for-post-natal-pm-exposure" class="level2 unlisted hidden">
+<h2 class="unlisted hidden anchored" data-anchor-id="run-meta-analysis-for-post-natal-pm-exposure">Run meta-analysis for post-natal PM exposure</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Pre-natal exposure (entire pregnancy)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>pm_total_post_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">==</span> <span class="st">"Total"</span> <span class="sc">&amp;</span> </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>           exposure_period <span class="sc">==</span> <span class="st">"post-natal"</span> <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)  </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>m.pm_total_postnatal<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_post_data))</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="do">### Post-natal exposure, by sex</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>pm_sex_post_data <span class="ot">&lt;-</span> standardised_review_data <span class="sc">|&gt;</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exposure <span class="sc">==</span> <span class="st">"PM2.5"</span> <span class="sc">&amp;</span> exposure_level <span class="sc">!=</span> <span class="st">"NA"</span> <span class="sc">&amp;</span> sample <span class="sc">!=</span> <span class="st">"Total"</span> <span class="sc">&amp;</span> </span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>           exposure_period <span class="sc">==</span> <span class="st">"post-natal"</span> <span class="sc">&amp;</span> reference <span class="sc">!=</span> <span class="dv">3</span>)  </span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>m.pm_sex_postnatal<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> sample,</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_sex_post_data))</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a><span class="do">### Post-natal exposure, by iq test</span></span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>m.pm_iq_postnatal<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> iq_wechsler,</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_post_data))</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a><span class="do">### Post-natal exposure, by statistical model</span></span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>m.pm_model_postnatal <span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> model_distributed,</span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_post_data))</span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a><span class="do">### Post-natal exposure, by age tested</span></span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>m.pm_age_postnatal<span class="ot">=</span>(<span class="fu">metagen</span>(<span class="at">TE =</span> standardised_effect_size, <span class="at">lower=</span>standardised_ci_lower,</span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>               <span class="at">upper=</span>standardised_ci_upper,</span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>               <span class="at">studlab =</span> study,</span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>               <span class="at">subgroup =</span> age_period_tested,</span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>               <span class="co">#prediction = exposure_level,</span></span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>               <span class="at">sm =</span> <span class="st">"Effect Size"</span>,</span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>               <span class="at">common =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>               <span class="at">random =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau =</span> <span class="st">"DL"</span>,</span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.random.ci =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.predict =</span> <span class="st">"HK"</span>,</span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.tau.ci =</span> <span class="st">"J"</span>, <span class="co">#Jackson method recommended for DerSimonian-Laird </span></span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>                                    <span class="co">#estimator of τ2</span></span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>               <span class="at">method.I2 =</span> <span class="st">"Q"</span>,</span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>               <span class="at">data =</span> pm_total_post_data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="pm2.5-forest-plots---post-natal-exposure" class="level2 tabset">
+<h2 class="tabset anchored" data-anchor-id="pm2.5-forest-plots---post-natal-exposure">PM2.5 Forest Plots - Post-natal exposure</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Total Sample</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">By Sex</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">By IQ test</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">By Statistical Model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-5" role="tab" aria-controls="tabset-4-5" aria-selected="false" href="">By age IQ tested</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-5-tab">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
