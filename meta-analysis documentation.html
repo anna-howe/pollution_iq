@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Anna Howe">
-<meta name="dcterms.date" content="2025-08-14">
+<meta name="dcterms.date" content="2025-10-05">
 
 <title>Meta-analysis: Pollution and IQ</title>
 <style>
@@ -334,14 +334,14 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 14, 2025</p>
+      <p class="date">October 5, 2025</p>
     </div>
   </div>
   
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">August 14, 2025</p>
+      <p class="date-modified">October 5, 2025</p>
     </div>
   </div>
     
@@ -421,7 +421,7 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>review_data <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span> (</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">path =</span> <span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">aho135</span><span class="sc">\\</span><span class="st">OneDrive - University of Canterbury</span><span class="sc">\\</span><span class="st">Research</span><span class="sc">\\</span><span class="st">air quality and IQ metaanalysis data.xlsx"</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">range =</span> <span class="st">"data!B1:U142"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">range =</span> <span class="st">"data!B1:W142"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="create-standardised-data" class="level2 unlisted hidden">
@@ -457,14 +457,16 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 2%">
+<col style="width: 1%">
 <col style="width: 4%">
 <col style="width: 1%">
 <col style="width: 1%">
 <col style="width: 6%">
 <col style="width: 3%">
+<col style="width: 2%">
 <col style="width: 4%">
-<col style="width: 7%">
+<col style="width: 3%">
+<col style="width: 6%">
 <col style="width: 2%">
 <col style="width: 4%">
 <col style="width: 3%">
@@ -477,7 +479,7 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <col style="width: 8%">
 <col style="width: 5%">
 <col style="width: 4%">
-<col style="width: 5%">
+<col style="width: 4%">
 <col style="width: 4%">
 <col style="width: 4%">
 </colgroup>
@@ -489,6 +491,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <th style="text-align: left;">exposure</th>
 <th style="text-align: left;">exposure_time</th>
 <th style="text-align: left;">exposure_period</th>
+<th style="text-align: left;">x</th>
+<th style="text-align: left;">time_between_exp_testing</th>
 <th style="text-align: left;">iq_test</th>
 <th style="text-align: left;">iq_wechsler</th>
 <th style="text-align: left;">iq_mccarthy</th>
@@ -516,6 +520,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Averaged across sensitive window</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -541,6 +547,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Averaged over entire pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -566,6 +574,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Averaged across sensitive window</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -591,6 +601,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Averaged over entire pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -616,6 +628,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Averaged across sensitive window</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -641,6 +655,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Averaged over entire pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -666,6 +682,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -691,6 +709,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -716,6 +736,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -741,6 +763,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -766,6 +790,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -791,6 +817,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -816,6 +844,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">4 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -841,6 +871,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">8 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -866,6 +898,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">12 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -891,6 +925,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">16 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -916,6 +952,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">20 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -941,6 +979,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">24 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -966,6 +1006,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">28 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -991,6 +1033,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">32 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1016,6 +1060,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">6 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">5 years</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1041,6 +1087,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">12 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1066,6 +1114,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">18 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">4 years</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1091,6 +1141,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">24 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1116,6 +1168,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">30 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">3 years</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1141,6 +1195,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">36 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1166,6 +1222,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">42 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">2 years</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1191,6 +1249,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">48 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1216,6 +1276,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">54 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">1 year</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1241,6 +1303,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">KBIT-2 verbal</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1266,6 +1330,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Birth‒age 6</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">KBIT-2 verbal</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1289,8 +1355,10 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">Harris et al.&nbsp;(2015)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">PM2.5</td>
-<td style="text-align: left;">Year before cognitive testing</td>
+<td style="text-align: left;">7 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">7 years +</td>
+<td style="text-align: left;">1</td>
 <td style="text-align: left;">KBIT-2 verbal</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1316,6 +1384,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1341,6 +1411,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1366,6 +1438,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1391,6 +1465,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -1416,6 +1492,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-V</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1436,11 +1514,13 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 </tr>
 <tr class="even">
 <td style="text-align: right;">7</td>
-<td style="text-align: left;">Kusters et al.&nbsp; (2022)</td>
+<td style="text-align: left;">Kusters et al.&nbsp;(2022)</td>
 <td style="text-align: left;">Total</td>
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Childhood</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-V</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1466,6 +1546,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1491,6 +1573,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1516,6 +1600,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1541,6 +1627,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1566,6 +1654,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">0–2 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1591,6 +1681,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1616,6 +1708,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1641,6 +1735,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1666,6 +1762,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1691,6 +1789,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1716,6 +1816,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">0–2 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1741,6 +1843,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1766,6 +1870,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1791,6 +1897,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1816,6 +1924,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1841,6 +1951,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1866,6 +1978,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">0–2 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1891,6 +2005,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -1916,6 +2032,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-III</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1941,6 +2059,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1966,6 +2086,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -1991,6 +2113,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2016,6 +2140,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2041,6 +2167,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2066,6 +2194,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2091,6 +2221,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2116,6 +2248,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2141,6 +2275,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2166,6 +2302,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2191,6 +2329,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2216,6 +2356,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2241,6 +2383,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2266,6 +2410,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">0–1 year</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">5 years</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2291,6 +2437,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1–3 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">3 years</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2316,6 +2464,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3–5 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">1 year</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2341,6 +2491,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2366,6 +2518,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2391,6 +2545,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2416,6 +2572,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2441,6 +2599,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">0–1 year</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">5 years</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2466,6 +2626,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1–3 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">3 years</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2491,6 +2653,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3–5 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">1 year</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2516,6 +2680,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2541,6 +2707,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2566,6 +2734,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2591,6 +2761,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2616,6 +2788,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">0–1 year</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">5 years</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2641,6 +2815,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">1–3 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">3 years</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2666,6 +2842,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3–5 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">1 year</td>
 <td style="text-align: left;">WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2691,6 +2869,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Year before cognitive testing</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">8 years +</td>
+<td style="text-align: left;">1 year</td>
 <td style="text-align: left;">WASI</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2716,6 +2896,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">2 years before cognitive testing</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">7 years +</td>
+<td style="text-align: left;">2 years</td>
 <td style="text-align: left;">WASI</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2741,6 +2923,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">3 years before cognitive testing</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">6 years +</td>
+<td style="text-align: left;">3 years</td>
 <td style="text-align: left;">WASI</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -2766,6 +2950,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">6 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">4 years</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -2791,6 +2977,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">12 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -2816,6 +3004,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">18 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">3 years</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -2841,6 +3031,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">24 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -2866,6 +3058,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">30 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">2 years</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -2891,6 +3085,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">36 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -2916,6 +3112,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">42 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">1 year</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -2941,6 +3139,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">48 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">6 months</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -2966,6 +3166,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">PM2.5</td>
 <td style="text-align: left;">Age 3.5–4.1 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">0 to 6 years</td>
+<td style="text-align: left;">1 year</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -2991,6 +3193,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Childhood</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -3016,6 +3220,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Childhood</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">MSCA</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">yes</td>
@@ -3041,6 +3247,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">4 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3066,6 +3274,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">8 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3091,6 +3301,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">12 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3116,6 +3328,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">16 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3141,6 +3355,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">20 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3166,6 +3382,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">24 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3191,6 +3409,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">28 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3216,6 +3436,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">32 weeks</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3241,6 +3463,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">6 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">4 years</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3266,6 +3490,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">12 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3291,6 +3517,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">18 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">3 years</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3316,6 +3544,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">24 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3341,6 +3571,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">30 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2 years</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3366,6 +3598,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">36 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3391,6 +3625,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">42 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">1 year</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3416,6 +3652,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">48 months</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WPPSI-III &amp; WISC-IV</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3441,6 +3679,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-5</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3466,6 +3706,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Childhood</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-5</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3491,6 +3733,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3516,6 +3760,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3541,6 +3787,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3566,6 +3814,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3591,6 +3841,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">0-2 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3616,6 +3868,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3641,6 +3895,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3666,6 +3922,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3691,6 +3949,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3716,6 +3976,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3741,6 +4003,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">0-2 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3766,6 +4030,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3791,6 +4057,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">1st trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3816,6 +4084,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">2nd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3841,6 +4111,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">3rd trimester</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3866,6 +4138,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3891,6 +4165,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">0-2 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3916,6 +4192,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">2–4 years</td>
 <td style="text-align: left;">post-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5, WISC-V</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3941,6 +4219,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">WISC-III</td>
 <td style="text-align: left;">Wechsler version</td>
 <td style="text-align: left;">no</td>
@@ -3966,6 +4246,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -3991,6 +4273,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -4016,6 +4300,8 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <td style="text-align: left;">NO2</td>
 <td style="text-align: left;">Pregnancy</td>
 <td style="text-align: left;">pre-natal</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">NA</td>
 <td style="text-align: left;">SB-5</td>
 <td style="text-align: left;">KBIT|SB|MSCA|Mixed</td>
 <td style="text-align: left;">no</td>
@@ -4223,59 +4509,19 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Total Sample</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">By Sex</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">By IQ test</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">By Statistical Model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-5" role="tab" aria-controls="tabset-1-5" aria-selected="false" href="">By age IQ tested</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 <div id="tabset-1-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-5-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 </div>
 </div>
@@ -4286,37 +4532,13 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Total sample</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">For boys</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">For girls</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 </div>
 </div>
@@ -4378,26 +4600,10 @@ Supply arguments directly to `.fns` through an anonymous function instead.
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Pre-natal exposure (entire pregnancy)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Pre-natal exposure by sex (entire pregnancy)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="meta-analysis-documentation_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+
 </div>
 </div>
 </div>
